@@ -28,7 +28,7 @@ const ButtonWrapper = styled.button<{ props: Props }>`
   color: ${props => props.color || "rgb(255, 255, 255)"};
   font-size: ${props => props.props.fontSize || "15px"};
   font-weight: ${props => props.props.fontWeight || "600"};
-  border-radius: "6px",
+  border-radius: 6px;
   margin-top: ${props => props.props.marginTop};
   margin-bottom: ${props => props.props.marginBottom};
 
