@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
