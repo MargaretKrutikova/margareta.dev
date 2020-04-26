@@ -2,13 +2,18 @@ backend:
   name: github
   repo: margaretkrutikova/physics-blog
 
+local_backend: true
+
 media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     create: true
     fields:
       - { name: path, label: Path }
