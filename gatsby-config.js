@@ -16,7 +16,6 @@ module.exports = {
     `gatsby-plugin-offline`,
 
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed`,
     `gatsby-plugin-netlify`,
