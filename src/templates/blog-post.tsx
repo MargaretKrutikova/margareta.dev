@@ -2,7 +2,6 @@ import { graphql, Link, PageRendererProps } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { Query, SitePageContext } from "../graphql-types"
@@ -51,7 +50,6 @@ const BlogPostTemplate = (props: Props) => {
       <Date>{frontmatter.date}</Date>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <Divider />
-      <Bio />
       <PostNavigator>
         <li>
           {previous && (
