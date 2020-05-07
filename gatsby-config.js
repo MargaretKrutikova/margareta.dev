@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `margareta.dev`,
     author: `Rita Krutikova`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A place for words.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `rita_krutikova`,
