@@ -1,14 +1,14 @@
 .gatsby-highlight {
   margin-bottom: 1.75rem;
-  margin-left: -1.3125rem;
-  margin-right: -1.3125rem;
   -webkit-overflow-scrolling: touch;
-  border-radius: 10px;
-  background: #011627;
   overflow: auto;
 }
 
 /* Code blocks */
+pre[class*="language-"] {
+  border-radius: 5px;
+}
+
 pre[class*="language-"],
 code[class*="language-"] {
   white-space: pre-wrap;
