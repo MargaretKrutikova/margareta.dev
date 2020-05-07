@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(26)};
+  max-width: ${rhythm(22)};
   padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
 `
 
@@ -51,11 +51,11 @@ export const Layout = (props: Props) => {
         </HeaderTitle>
       </header>
       <main>{children}</main>
-      <Footer>
+      {/* <Footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </Footer>
+      </Footer> */}
     </Content>
   )
 }
