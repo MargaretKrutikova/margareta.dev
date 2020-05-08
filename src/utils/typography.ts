@@ -51,7 +51,7 @@ const typography = new Typography({
         marginLeft: arg.rhythm(-1 / 2),
       },
       html: {
-        fontSize: "100%",
+        fontSize: "110%",
       },
     },
   }),
