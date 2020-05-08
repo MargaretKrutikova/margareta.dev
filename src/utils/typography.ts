@@ -1,5 +1,9 @@
 import { CSSObject } from "styled-components"
 import Typography from "typography"
+import {
+  MIN_TABLET_MEDIA_QUERY,
+  MOBILE_MEDIA_QUERY
+} from "typography-breakpoint-constants"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
 Wordpress2016.overrideThemeStyles = () => ({
@@ -29,7 +33,23 @@ const typography = new Typography({
   overrideStyles: (arg, options) => ({
     ...Wordpress2016.overrideStyles(arg, options),
     "h1,h2,h3,h4,h5,h6": {
-      marginTop: arg.rhythm(1.5),
+      marginTop: arg.rhythm(1),
+    },
+    p: {
+      marginBottom: arg.rhythm(0.8),
+    },
+    "ul,ol": {
+      marginLeft: arg.rhythm(1),
+    },
+    [MIN_TABLET_MEDIA_QUERY]: {
+      "h1,h2,h3,h4,h5,h6": {
+        marginTop: arg.rhythm(1.3),
+      },
+    },
+    [MOBILE_MEDIA_QUERY]: {
+      blockquote: {
+        marginLeft: arg.rhythm(-1 / 2),
+      },
     },
   }),
 })

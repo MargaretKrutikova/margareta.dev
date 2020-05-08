@@ -5,7 +5,7 @@ title: F# Tips & Tricks
 description: F# useful code example and concepts
 ---
 
-\- Performing side effects in a loop with saving result from each one of them in a resulting list:
+Performing side effects in a loop with saving result from each one of them in a resulting list:
 
 ```fsharp
 let createOrders (userId : int) (orders : OrderInputModel seq) : Result<unit, ApiError> =

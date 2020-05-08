@@ -1,6 +1,7 @@
 import { Link, PageRendererProps } from "gatsby"
 import React, { ReactNode } from "react"
 import styled from "styled-components"
+import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
 import { rhythm, styledScale } from "../utils/typography"
 
@@ -31,6 +32,9 @@ const Content = styled.div`
   margin-right: auto;
   max-width: ${rhythm(22)};
   padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
+  ${MOBILE_MEDIA_QUERY} {
+    padding: ${`${rhythm(1.5)} ${rhythm(1 / 2)}`};
+  }
 `
 
 const Footer = styled.footer`

@@ -60,6 +60,7 @@
     "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.14",
     "@types/typography": "^0.16.2",
+    "@types/typography-breakpoint-constants": "^0.16.0",
     "graphql": "^14.2.1",
     "prettier": "^1.17.0",
     "tslint": "^5.16.0",
