@@ -1,7 +1,7 @@
 .gatsby-highlight {
   margin-bottom: 1.75rem;
-  margin-left: -0.9rem;
-  margin-right: -0.9rem;
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }
@@ -9,9 +9,4 @@
 /* Code blocks */
 pre[class*="language-"] {
   border-radius: 5px;
-}
-
-pre[class*="language-"],
-code[class*="language-"] {
-  white-space: pre-wrap;
 }

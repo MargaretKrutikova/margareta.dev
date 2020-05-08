@@ -33,18 +33,15 @@ const typography = new Typography({
   overrideStyles: (arg, options) => ({
     ...Wordpress2016.overrideStyles(arg, options),
     "h1,h2,h3,h4,h5,h6": {
-      marginTop: arg.rhythm(1),
+      marginTop: arg.rhythm(1.3),
     },
     p: {
-      marginBottom: arg.rhythm(0.5),
+      marginBottom: arg.rhythm(0.8),
     },
     "ul,ol": {
       marginLeft: arg.rhythm(1),
     },
     [MIN_TABLET_MEDIA_QUERY]: {
-      "h1,h2,h3,h4,h5,h6": {
-        marginTop: arg.rhythm(1.3),
-      },
       p: {
         marginBottom: arg.rhythm(0.8),
       },
@@ -52,6 +49,9 @@ const typography = new Typography({
     [MOBILE_MEDIA_QUERY]: {
       blockquote: {
         marginLeft: arg.rhythm(-1 / 2),
+      },
+      html: {
+        fontSize: "100%",
       },
     },
   }),
