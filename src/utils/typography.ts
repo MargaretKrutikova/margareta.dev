@@ -36,7 +36,7 @@ const typography = new Typography({
       marginTop: arg.rhythm(1),
     },
     p: {
-      marginBottom: arg.rhythm(0.8),
+      marginBottom: arg.rhythm(0.5),
     },
     "ul,ol": {
       marginLeft: arg.rhythm(1),
@@ -44,6 +44,9 @@ const typography = new Typography({
     [MIN_TABLET_MEDIA_QUERY]: {
       "h1,h2,h3,h4,h5,h6": {
         marginTop: arg.rhythm(1.3),
+      },
+      p: {
+        marginBottom: arg.rhythm(0.8),
       },
     },
     [MOBILE_MEDIA_QUERY]: {

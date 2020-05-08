@@ -16,7 +16,7 @@ let createOrders (userId : int) (orders : OrderInputModel seq) : Result<unit, Ap
     |> foldResultList
     |> Result.ignore
 
- let processOrders (userId : int) (orders : OrderInputModel seq) : Result<UserHistoryModel, ApiError> =
+let processOrders (userId : int) (orders : OrderInputModel seq) : Result<UserHistoryModel, ApiError> =
     result {
         do! createOrders userId orders
         return! orderApiService.GetUserHistory userId

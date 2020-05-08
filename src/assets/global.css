@@ -1,5 +1,7 @@
 .gatsby-highlight {
   margin-bottom: 1.75rem;
+  margin-left: -0.9rem;
+  margin-right: -0.9rem;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
 }
