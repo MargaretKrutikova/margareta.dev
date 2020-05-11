@@ -13,7 +13,7 @@
 pre[class*="language-"],
 code[class*="language-"] {
   color: #253b43;
-  font-size: 13px;
+  font-size: 14px;
   text-shadow: none;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   direction: ltr;
@@ -29,11 +29,12 @@ code[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  background: rgb(247, 249, 250) !important;
 }
 @media only screen and (max-width: 480px) {
   pre[class*="language-"],
   code[class*="language-"] {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 pre[class*="language-"]::selection,
@@ -53,7 +54,7 @@ pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  background: #f8f5ec;
+  background: #f9f6ef;
 }
 :not(pre) > code[class*="language-"] {
   padding: 0.1em 0.3em;
@@ -146,4 +147,9 @@ pre[class*="language-"] > code[class*="language-"] {
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
+}
+
+.token.class-name {
+  color: #0fb291;
+  font-weight: bold;
 }
