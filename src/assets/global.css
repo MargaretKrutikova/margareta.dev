@@ -6,6 +6,37 @@
   overflow: auto;
 }
 
+@media only screen and (max-width: 480px) {
+  .gatsby-highlight {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+pre[class*="language-"],
+code[class*="language-"] {
+  font-size: 13px;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+.token.entity,
+.token.namespace,
+.token.class-name {
+  color: #4ec9b0;
+  cursor: unset;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: #1e1e1e;
+}
+
 /* Code blocks */
 pre[class*="language-"] {
   border-radius: 5px;

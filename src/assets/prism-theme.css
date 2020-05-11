@@ -21,6 +21,7 @@ code[class*="language-"] {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  word-wrap: normal;
   line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -29,14 +30,14 @@ code[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background: rgb(247, 249, 250) !important;
 }
 @media only screen and (max-width: 480px) {
   pre[class*="language-"],
   code[class*="language-"] {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
+
 pre[class*="language-"]::selection,
 code[class*="language-"]::selection,
 pre[class*="language-"]::mozselection,
