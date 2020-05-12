@@ -26,7 +26,6 @@ module.exports = {
         documentPaths: [
           "./src/**/*.{ts,tsx}",
           "./node_modules/gatsby-*/**/*.js",
-          "./gatsby-node.ts",
         ],
       },
     },

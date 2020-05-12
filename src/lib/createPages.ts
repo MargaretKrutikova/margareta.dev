@@ -1,8 +1,10 @@
 import path from "path"
+
 import { GatsbyCreatePages } from "../types"
 
 interface Post {
   node: {
+    fileAbsolutePath: string
     fields: {
       slug: string
     }
@@ -23,6 +25,7 @@ export const createPages: GatsbyCreatePages = async ({
       ) {
         edges {
           node {
+            fileAbsolutePath
             fields {
               slug
             }
@@ -40,8 +43,10 @@ export const createPages: GatsbyCreatePages = async ({
   }
 
   // Create blog posts pages.
-  const posts = allMarkdown.data.allMarkdownRemark.edges
-
+  const entries = allMarkdown.data.allMarkdownRemark.edges
+  const posts = entries.filter(
+    (entry: Post) => entry.node.fileAbsolutePath.indexOf("/blog/") > -1
+  )
   posts.forEach((post: Post, index: number) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -54,6 +59,26 @@ export const createPages: GatsbyCreatePages = async ({
         next,
         previous,
         slug: post.node.fields.slug,
+      },
+    })
+  })
+
+  // Create pages for notes.
+  const notes = entries.filter(
+    (entry: Post) => entry.node.fileAbsolutePath.indexOf("/notes/") > -1
+  )
+  notes.forEach((note: Post, index: number) => {
+    const previous = index === notes.length - 1 ? null : notes[index + 1].node
+    const next = index === 0 ? null : notes[index - 1].node
+
+    createPage({
+      path: note.node.fields.slug,
+      // tslint:disable-next-line:object-literal-sort-keys
+      component: path.resolve(`./src/templates/note.tsx`),
+      context: {
+        next,
+        previous,
+        slug: note.node.fields.slug,
       },
     })
   })
