@@ -20,6 +20,17 @@ module.exports = {
     `gatsby-plugin-feed`,
     `gatsby-plugin-netlify`,
     {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./src/gatsby-graphql.ts`,
+        documentPaths: [
+          "./src/**/*.{ts,tsx}",
+          "./node_modules/gatsby-*/**/*.js",
+          "./gatsby-node.d.ts",
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -31,6 +42,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `notes`,
+        path: `${__dirname}/content/notes/`,
       },
     },
     {
