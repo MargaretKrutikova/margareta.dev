@@ -21,3 +21,20 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
+
+  - name: "notes"
+    label: "Notes"
+    folder: "content/notes"
+    path: "{{language}}/{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: category, default: "notes" }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: language, label: Language }
+      - { name: tags, label: Tags, widget: "list" }
+      - { name: body, label: Body, widget: markdown }
