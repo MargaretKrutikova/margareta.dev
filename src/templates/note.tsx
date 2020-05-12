@@ -73,7 +73,7 @@ const BlogPostTemplate = (props: Props) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query NoteBySlug($slug: String!) {
     site {
       siteMetadata {
         title
