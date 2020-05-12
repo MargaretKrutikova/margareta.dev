@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 
 export const notesPageQuery = graphql`
-  query NotesPageQuery {
+  query NotesPage {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/(notes)/" } }
