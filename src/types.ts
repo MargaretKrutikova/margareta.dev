@@ -1,8 +1,14 @@
+export interface SitePageContext {
+  next: RequiredProperty<MarkdownRemarkContextInfo> | null
+  previous: RequiredProperty<MarkdownRemarkContextInfo> | null
+  slug: string
+}
+
 interface PageInput {
   path: string
   component: string
   layout?: string
-  context?: any
+  context?: SitePageContext
 }
 
 interface BoundActionCreators {
@@ -32,4 +38,24 @@ export type RequiredProperty<T> = {
 
 export type NoUndefinedField<T> = {
   [P in keyof T]-?: NoUndefinedField<NonNullable<T[P]>>
+}
+
+export interface MarkdownFields {
+  title: string | null
+  slug: string | null
+  date: any | null
+}
+
+export interface MarkdownRemarkContextInfo {
+  id: string
+  fields: MarkdownFields | null
+}
+
+export interface CreatePagesQuery {
+  notesQuery: {
+    edges: Array<{ node: MarkdownRemarkContextInfo }>
+  }
+  postsQuery: {
+    edges: Array<{ node: MarkdownRemarkContextInfo }>
+  }
 }

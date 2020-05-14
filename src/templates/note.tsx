@@ -2,11 +2,10 @@ import { graphql, Link, PageRendererProps } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { SitePageContext } from "../../graphql-types"
 import { NoteBySlug } from "../apollo-graphql"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
-import { RequiredProperty } from "../types"
+import { RequiredProperty, SitePageContext } from "../types"
 import { rhythm, styledScale } from "../utils/typography"
 
 interface Props extends PageRendererProps {
@@ -35,32 +34,31 @@ const PostNavigator = styled.ul`
 
 const BlogPostTemplate = (props: Props) => {
   const { markdownRemark: post, site } = props.data
-  const frontmatter = post.frontmatter
+  const { fields, excerpt, html } = post
 
   const { previous, next } = props.pageContext
 
   return (
     <Layout location={props.location} title={site.siteMetadata.title}>
-      <SEO
-        title={frontmatter.title!}
-        description={frontmatter.description || post.excerpt}
-      />
-      <h1>{post.frontmatter!.title}</h1>
-      <Date>{frontmatter.date}</Date>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <SEO title={fields.title} description={fields.description || excerpt} />
+      <h1>{fields.title}</h1>
+      <Date>{fields.date}</Date>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+
       <Divider />
+
       <PostNavigator>
         <li>
           {previous && (
-            <Link to={previous.fields!.slug!} rel="prev">
-              ← {previous.frontmatter!.title}
+            <Link to={previous.fields.slug} rel="prev">
+              ← {previous.fields.title}
             </Link>
           )}
         </li>
         <li>
           {next && (
-            <Link to={next.fields!.slug!} rel="next">
-              {next.frontmatter!.title} →
+            <Link to={next.fields.slug} rel="next">
+              {next.fields.title} →
             </Link>
           )}
         </li>

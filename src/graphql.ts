@@ -17,8 +17,6 @@ export const markdownRemarksShortInfo = graphql`
         excerpt
         fields {
           slug
-        }
-        frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
           description
@@ -34,7 +32,7 @@ export const markdownRemarkInfo = graphql`
     id
     excerpt(pruneLength: 160)
     html
-    frontmatter {
+    fields {
       title
       date(formatString: "MMMM DD, YYYY")
       description

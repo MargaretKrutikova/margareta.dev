@@ -13,6 +13,42 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    createNodeField({
+      name: "id",
+      node,
+      value: node.id,
+    })
+
+    createNodeField({
+      name: "title",
+      node,
+      value: node.frontmatter.title,
+    })
+
+    createNodeField({
+      name: "description",
+      node,
+      value: node.frontmatter.description,
+    })
+
+    createNodeField({
+      name: "date",
+      node,
+      value: node.frontmatter.date ? node.frontmatter.date.split(" ")[0] : "",
+    })
+
+    createNodeField({
+      name: "category",
+      node,
+      value: node.frontmatter.category || [],
+    })
+
+    createNodeField({
+      name: "tags",
+      node,
+      value: node.frontmatter.topics || [],
+    })
   }
 }
 

@@ -1,7 +1,6 @@
 import path from "path"
 
-import { CreatePagesQuery } from "../apollo-graphql"
-import { GatsbyCreatePages, RequiredProperty } from "../types"
+import { CreatePagesQuery, GatsbyCreatePages, RequiredProperty } from "../types"
 
 export const createPages: GatsbyCreatePages = async ({
   graphql,
@@ -18,10 +17,10 @@ export const createPages: GatsbyCreatePages = async ({
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
             fields {
               title
               slug
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }
@@ -34,11 +33,10 @@ export const createPages: GatsbyCreatePages = async ({
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
             fields {
               title
               slug
-              title
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }

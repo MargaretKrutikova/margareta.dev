@@ -78,66 +78,6 @@ export interface SeoQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: CreatePagesQuery
-// ====================================================
-
-export interface CreatePagesQuery_notesQuery_edges_node_fields {
-  __typename: "MarkdownRemarkFields";
-  title: string | null;
-  slug: string | null;
-}
-
-export interface CreatePagesQuery_notesQuery_edges_node {
-  __typename: "MarkdownRemark";
-  id: string;
-  excerpt: string | null;
-  fields: CreatePagesQuery_notesQuery_edges_node_fields | null;
-}
-
-export interface CreatePagesQuery_notesQuery_edges {
-  __typename: "MarkdownRemarkEdge";
-  node: CreatePagesQuery_notesQuery_edges_node;
-}
-
-export interface CreatePagesQuery_notesQuery {
-  __typename: "MarkdownRemarkConnection";
-  edges: CreatePagesQuery_notesQuery_edges[];
-}
-
-export interface CreatePagesQuery_postsQuery_edges_node_fields {
-  __typename: "MarkdownRemarkFields";
-  title: string | null;
-  slug: string | null;
-}
-
-export interface CreatePagesQuery_postsQuery_edges_node {
-  __typename: "MarkdownRemark";
-  id: string;
-  excerpt: string | null;
-  fields: CreatePagesQuery_postsQuery_edges_node_fields | null;
-}
-
-export interface CreatePagesQuery_postsQuery_edges {
-  __typename: "MarkdownRemarkEdge";
-  node: CreatePagesQuery_postsQuery_edges_node;
-}
-
-export interface CreatePagesQuery_postsQuery {
-  __typename: "MarkdownRemarkConnection";
-  edges: CreatePagesQuery_postsQuery_edges[];
-}
-
-export interface CreatePagesQuery {
-  notesQuery: CreatePagesQuery_notesQuery;
-  postsQuery: CreatePagesQuery_postsQuery;
-}
-
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL query operation: SiteQuery
 // ====================================================
 
@@ -181,10 +121,6 @@ export interface BlogIndexQuery_site {
 export interface BlogIndexQuery_allMarkdownRemark_edges_node_fields {
   __typename: "MarkdownRemarkFields";
   slug: string | null;
-}
-
-export interface BlogIndexQuery_allMarkdownRemark_edges_node_frontmatter {
-  __typename: "MarkdownRemarkFrontmatter";
   date: any | null;
   title: string | null;
   description: string | null;
@@ -195,7 +131,6 @@ export interface BlogIndexQuery_allMarkdownRemark_edges_node {
   __typename: "MarkdownRemark";
   excerpt: string | null;
   fields: BlogIndexQuery_allMarkdownRemark_edges_node_fields | null;
-  frontmatter: BlogIndexQuery_allMarkdownRemark_edges_node_frontmatter | null;
 }
 
 export interface BlogIndexQuery_allMarkdownRemark_edges {
@@ -237,10 +172,6 @@ export interface NotesPageQuery_site {
 export interface NotesPageQuery_allMarkdownRemark_edges_node_fields {
   __typename: "MarkdownRemarkFields";
   slug: string | null;
-}
-
-export interface NotesPageQuery_allMarkdownRemark_edges_node_frontmatter {
-  __typename: "MarkdownRemarkFrontmatter";
   date: any | null;
   title: string | null;
   description: string | null;
@@ -251,7 +182,6 @@ export interface NotesPageQuery_allMarkdownRemark_edges_node {
   __typename: "MarkdownRemark";
   excerpt: string | null;
   fields: NotesPageQuery_allMarkdownRemark_edges_node_fields | null;
-  frontmatter: NotesPageQuery_allMarkdownRemark_edges_node_frontmatter | null;
 }
 
 export interface NotesPageQuery_allMarkdownRemark_edges {
@@ -290,8 +220,8 @@ export interface BlogPostBySlug_site {
   siteMetadata: BlogPostBySlug_site_siteMetadata | null;
 }
 
-export interface BlogPostBySlug_markdownRemark_frontmatter {
-  __typename: "MarkdownRemarkFrontmatter";
+export interface BlogPostBySlug_markdownRemark_fields {
+  __typename: "MarkdownRemarkFields";
   title: string | null;
   date: any | null;
   description: string | null;
@@ -302,7 +232,7 @@ export interface BlogPostBySlug_markdownRemark {
   id: string;
   excerpt: string | null;
   html: string | null;
-  frontmatter: BlogPostBySlug_markdownRemark_frontmatter | null;
+  fields: BlogPostBySlug_markdownRemark_fields | null;
 }
 
 export interface BlogPostBySlug {
@@ -335,8 +265,8 @@ export interface NoteBySlug_site {
   siteMetadata: NoteBySlug_site_siteMetadata | null;
 }
 
-export interface NoteBySlug_markdownRemark_frontmatter {
-  __typename: "MarkdownRemarkFrontmatter";
+export interface NoteBySlug_markdownRemark_fields {
+  __typename: "MarkdownRemarkFields";
   title: string | null;
   date: any | null;
   description: string | null;
@@ -347,7 +277,7 @@ export interface NoteBySlug_markdownRemark {
   id: string;
   excerpt: string | null;
   html: string | null;
-  frontmatter: NoteBySlug_markdownRemark_frontmatter | null;
+  fields: NoteBySlug_markdownRemark_fields | null;
 }
 
 export interface NoteBySlug {
@@ -840,10 +770,6 @@ export interface SiteInformation {
 export interface MarkdownRemarksShortInfo_edges_node_fields {
   __typename: "MarkdownRemarkFields";
   slug: string | null;
-}
-
-export interface MarkdownRemarksShortInfo_edges_node_frontmatter {
-  __typename: "MarkdownRemarkFrontmatter";
   date: any | null;
   title: string | null;
   description: string | null;
@@ -854,7 +780,6 @@ export interface MarkdownRemarksShortInfo_edges_node {
   __typename: "MarkdownRemark";
   excerpt: string | null;
   fields: MarkdownRemarksShortInfo_edges_node_fields | null;
-  frontmatter: MarkdownRemarksShortInfo_edges_node_frontmatter | null;
 }
 
 export interface MarkdownRemarksShortInfo_edges {
@@ -876,8 +801,8 @@ export interface MarkdownRemarksShortInfo {
 // GraphQL fragment: MarkdownRemarkInfo
 // ====================================================
 
-export interface MarkdownRemarkInfo_frontmatter {
-  __typename: "MarkdownRemarkFrontmatter";
+export interface MarkdownRemarkInfo_fields {
+  __typename: "MarkdownRemarkFields";
   title: string | null;
   date: any | null;
   description: string | null;
@@ -888,7 +813,7 @@ export interface MarkdownRemarkInfo {
   id: string;
   excerpt: string | null;
   html: string | null;
-  frontmatter: MarkdownRemarkInfo_frontmatter | null;
+  fields: MarkdownRemarkInfo_fields | null;
 }
 
 /* tslint:disable */
