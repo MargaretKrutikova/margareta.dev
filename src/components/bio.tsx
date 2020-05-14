@@ -3,7 +3,7 @@ import Image from "gatsby-image"
 import React, { ComponentProps, forwardRef, Ref } from "react"
 import styled from "styled-components"
 
-import { BioQueryQuery } from "../../graphql-types"
+import { BioQuery } from "../apollo-graphql"
 import { NoUndefinedField } from "../types"
 import { rhythm } from "../utils/typography"
 
@@ -26,7 +26,7 @@ const Avatar = styled(GatsbyImage)`
 `
 
 export const Bio = () => {
-  const data = useStaticQuery<NoUndefinedField<BioQueryQuery>>(graphql`
+  const data = useStaticQuery<NoUndefinedField<BioQuery>>(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {

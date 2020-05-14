@@ -2,7 +2,7 @@ import { graphql, Link, PageRendererProps, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { NotesPageQuery } from "../../graphql-types"
+import { NotesPageQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { NoUndefinedField } from "../types"
@@ -46,21 +46,20 @@ const Notes = (props: Props) => {
       <StyledH3>Notes</StyledH3>
       <SEO title="All notes" keywords={[`notes`, `notes`, `code`]} />
       {notes.map(({ node }) => {
-        const { frontmatter, fields, excerpt } = node
+        const { fields, excerpt } = node
 
         const slug = fields.slug
-        const title = frontmatter.title || fields.slug
+        const title = fields.title || fields.slug
 
         return (
           <div key={slug}>
             <Title>
               <StyledLink to={slug}>{title}</StyledLink>
             </Title>
-            <small>{frontmatter.date}</small>
-            <small>{frontmatter.language}</small>
+            <small>{fields.date}</small>
             <p
               dangerouslySetInnerHTML={{
-                __html: frontmatter.description || excerpt,
+                __html: fields.description || excerpt,
               }}
             />
           </div>
