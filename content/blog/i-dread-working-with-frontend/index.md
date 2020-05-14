@@ -7,9 +7,11 @@ published: false
 description: I have felt it for quite some time now, it is finally time to admit
   it - I am scared to work with frontend
 ---
-let's start
+***Warning/Disclaimer**. There is a lot of rant in this post, it might include swear words or inappropriate content and is not recommended if the reader is in a good mood or is in general a very positive person with hope for the future. The reader's mood is at risk to be destroyed. This is my way of coping with downsides. Please, continue at your own risk.* 
 
-A few days after a code freeze before the next big release there comes a performance regression issue. In Frontend. In IE 11. Oh my ... Having mixed feelings between absolute endless fear of not being able to solve it in time and a little bit of curiosity, I start digging. One of the pages in our huge product takes 20 seconds to load in IE11. The funny part is that the page freezes, the loading indicator that is supposed to indicate to the user "Be patient, I am loading some initial data for you here!" freezes for 20 seconds. Wtf... 
+A few days after a code freeze before the next big release there comes a performance regression issue. In Frontend. In IE 11. Oh my ... Having mixed feelings between absolute endless fear of not being able to solve it in time and a little bit of curiosity, I start digging. 
+
+One of the pages in our huge product takes 20 seconds to load in IE11. The funny part is that the page freezes, the loading indicator that is supposed to indicate to the user "Be patient, I am loading some initial data for you here!" freezes for 20 seconds. Wtf... 
 
 The api call for the initial data takes less than a second. It fetches an enormous list of 10,000 items, data specifically designed for stress testing. But it is not the api call causing the slowness, it is something that happens after it that makes the whole page freeze. Crazy. 
 
