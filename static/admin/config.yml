@@ -18,6 +18,7 @@ collections:
     fields:
       - { name: path, label: Path, optional: true }
       - { name: date, label: Date, widget: date }
+      - { name: category, default: "blog-post" }
       - { name: title, label: Title }
       - { name: published, label: Published, widget: "boolean", default: false }
       - { name: description, label: Description }
