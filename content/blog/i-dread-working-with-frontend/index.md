@@ -7,7 +7,7 @@ published: false
 description: I have felt it for quite some time now, it is finally time to admit
   it - I am scared to work with frontend
 ---
-***Warning/Disclaimer**. There is a lot of rant in this post, it might include swear words or inappropriate content and is not recommended if the reader is in a good mood or is in general a very positive person with hope for the future. The reader's mood is at risk to be destroyed. This is my way of coping with downsides. Please, continue at your own risk. I am not blaming OSS or maintainers, this is merely a story of a bug I encountered at my job and how I battled it.*
+**\*Warning/Disclaimer**. There is a lot of rant in this post, it might include swear words or inappropriate content and is not recommended if the reader is in a good mood or is in general a very positive person with hope for the future. The reader's mood is at risk to be destroyed. This is my way of coping with downsides. Please, continue at your own risk. I am not blaming OSS or maintainers, this is merely a story of a bug I encountered at my job and how I battled it.*
 
 A few days after a code freeze before the next big release there comes a performance regression issue. In Frontend. In IE 11. Oh my ... Having mixed feelings between absolute endless fear of not being able to solve it in time and a little bit of curiosity, I start digging. 
 
@@ -32,3 +32,10 @@ Don't believe me? See <https://github.com/zloirock/core-js/issues/677>, scroll a
 > it also affects `Array#{ filter, map }`:-(
 
 This is madness my dear friends. No, I don't want to be frontend developer any more, I just want to enjoy my afternoon nap ...
+
+- - -
+
+I have seen developers who are scared to work with frontend, and I understand why - it is all new and they haven't seen much of it. I am the opposite - I feel like I have seen too much to have a reason to be scared. 
+From implementing close on click outside and fighting some `npm` library with a component that uses `event.stopPropagation` and steels the click event so you can never ever be done with your little click-outside feature. Friends don't let friends stop propagating events! Especially if those friends are creating an `npm` library.
+
+My fear originates from a complete uncertainty regardless of how much experience in Frontend you have. This new feature request to open the dropdown from an `npm` library on click on the small icon might take anywhere from an hour to weeks of dreadful headbang work. 
