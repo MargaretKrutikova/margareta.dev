@@ -20,16 +20,6 @@ module.exports = {
     `gatsby-plugin-feed`,
     `gatsby-plugin-netlify`,
     {
-      resolve: `gatsby-plugin-graphql-codegen`,
-      options: {
-        fileName: `./graphql-types.d.ts`,
-        documentPaths: [
-          "./src/**/*.{ts,tsx}",
-          "./node_modules/gatsby-*/**/*.js",
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

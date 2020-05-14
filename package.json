@@ -16,7 +16,6 @@
     "gatsby-plugin-feed": "^2.1.1",
     "gatsby-plugin-feed-mdx": "^1.0.1",
     "gatsby-plugin-google-analytics": "^2.0.18",
-    "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-mdx": "^1.1.11",
     "gatsby-plugin-netlify": "^2.2.4",
@@ -62,6 +61,7 @@
     "@types/styled-components": "^4.1.14",
     "@types/typography": "^0.16.2",
     "@types/typography-breakpoint-constants": "^0.16.0",
+    "apollo": "^2.27.4",
     "graphql": "^14.2.1",
     "prettier": "^1.17.0",
     "tslint": "^5.16.0",
@@ -83,13 +83,15 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8002",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "tsc": "tsc --noEmit",
     "lint": "tslint --project .",
-    "gql-codegen": "graphql-codegen --config codegen.yml"
+    "gql-codegen": "graphql-codegen --config codegen.yml",
+    "apollo:schema": "apollo client:download-schema --endpoint=http://localhost:8002/___graphql",
+    "apollo:generate": "apollo codegen:generate ./src/apollo-graphql.d.ts --tagName=graphql --target=typescript --outputFlat "
   }
 }
