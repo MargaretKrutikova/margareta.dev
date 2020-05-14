@@ -2,9 +2,10 @@ import { graphql, Link, PageRendererProps, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { MarkdownRemark } from "../../graphql-types"
+import { BlogIndexQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+import { NoUndefinedField } from "../types"
 import { rhythm } from "../utils/typography"
 
 const StyledLink = styled(Link)`
@@ -18,36 +19,21 @@ const Title = styled.h3`
 type Props = PageRendererProps
 
 const BlogIndex = (props: Props) => {
-  const data = useStaticQuery(graphql`
-    query {
+  const data = useStaticQuery<NoUndefinedField<BlogIndexQuery>>(graphql`
+    query BlogIndexQuery {
       site {
-        siteMetadata {
-          title
-        }
+        ...SiteInformation
       }
       allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fileAbsolutePath: { regex: "/(/blog/)/" } }
+        filter: { frontmatter: { category: { eq: "blog-post" } } }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
-        edges {
-          node {
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              description
-              category
-            }
-          }
-        }
+        ...MarkdownRemarksShortInfo
       }
     }
   `)
 
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = data.site.siteMetadata.title || ""
   const posts = data.allMarkdownRemark.edges
 
   return (
@@ -57,13 +43,12 @@ const BlogIndex = (props: Props) => {
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
       <StyledLink to={"/notes"}>Notes</StyledLink>
-      {posts.map(({ node }: { node: MarkdownRemark }) => {
-        const frontmatter = node!.frontmatter!
-        const fields = node!.fields!
-        const slug = fields.slug!
-        const excerpt = node!.excerpt!
+      {posts.map(({ node }) => {
+        const { frontmatter, fields, excerpt } = node
 
+        const slug = fields.slug
         const title = frontmatter.title || fields.slug
+
         return (
           <div key={slug}>
             <Title>

@@ -1,17 +1,18 @@
 import { graphql, PageRendererProps, useStaticQuery } from "gatsby"
 import React from "react"
+
+import { SiteQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+import { NoUndefinedField } from "../types"
 
 type Props = PageRendererProps
 
 export const NotFoundPage = (props: Props) => {
-  const data = useStaticQuery(graphql`
-    query {
+  const data = useStaticQuery<NoUndefinedField<SiteQuery>>(graphql`
+    query SiteQuery {
       site {
-        siteMetadata {
-          title
-        }
+        ...SiteInformation
       }
     }
   `)

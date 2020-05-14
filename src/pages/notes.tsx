@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { NotesPageQuery } from "../../graphql-types"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+import { NoUndefinedField } from "../types"
 import { rhythm } from "../utils/typography"
 
 const StyledLink = styled(Link)`
@@ -23,55 +24,33 @@ const Title = styled.h3`
 type Props = PageRendererProps
 
 const Notes = (props: Props) => {
-  const data = useStaticQuery<NotesPageQuery>(graphql`
-    query NotesPage {
+  const data = useStaticQuery<NoUndefinedField<NotesPageQuery>>(graphql`
+    query NotesPageQuery {
       site {
-        siteMetadata {
-          title
-        }
+        ...SiteInformation
       }
       allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fileAbsolutePath: { regex: "/(/notes/)/" } }
+        filter: { frontmatter: { category: { eq: "note" } } }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
-        edges {
-          node {
-            excerpt
-            fields {
-              slug
-            }
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              category
-              description
-              path
-              title
-              language
-              tags
-            }
-          }
-        }
+        ...MarkdownRemarksShortInfo
       }
     }
   `)
 
   const notes = data.allMarkdownRemark.edges
-  const siteTitle = data.site?.siteMetadata?.title || ""
+  const siteTitle = data.site.siteMetadata.title || ""
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <StyledH3>Notes</StyledH3>
-      <SEO title="All notes" keywords={[`notes`, `snippets`, `code`]} />
+      <SEO title="All notes" keywords={[`notes`, `notes`, `code`]} />
       {notes.map(({ node }) => {
-        const frontmatter = node!.frontmatter!
+        const { frontmatter, fields, excerpt } = node
 
-        const fields = node!.fields!
-
-        const slug = fields.slug!
-
-        const excerpt = node!.excerpt!
-
+        const slug = fields.slug
         const title = frontmatter.title || fields.slug
+
         return (
           <div key={slug}>
             <Title>

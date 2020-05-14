@@ -2,14 +2,16 @@ import { graphql, Link, PageRendererProps } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { Query, SitePageContext } from "../../graphql-types"
+import { SitePageContext } from "../../graphql-types"
+import { BlogPostBySlug } from "../apollo-graphql"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+import { RequiredProperty } from "../types"
 import { rhythm, styledScale } from "../utils/typography"
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext
-  data: Query
+  data: RequiredProperty<BlogPostBySlug>
 }
 
 const Date = styled.p`
@@ -32,23 +34,20 @@ const PostNavigator = styled.ul`
 `
 
 const BlogPostTemplate = (props: Props) => {
-  const data = props.data!
-  const post = data.markdownRemark!
-  const excerpt = post.excerpt!
-  const frontmatter = post.frontmatter!
-  const html = post.html!
-  const siteTitle = data.site!.siteMetadata!.title!
+  const { markdownRemark: post, site } = props.data
+  const frontmatter = post.frontmatter
+
   const { previous, next } = props.pageContext
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={props.location} title={site.siteMetadata.title}>
       <SEO
-        title={frontmatter.title!}
-        description={frontmatter.description || excerpt}
+        title={frontmatter.title}
+        description={frontmatter.description || post.excerpt}
       />
       <h1>{post.frontmatter!.title}</h1>
       <Date>{frontmatter.date}</Date>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <Divider />
       <PostNavigator>
         <li>
@@ -75,20 +74,10 @@ export default BlogPostTemplate
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
-      siteMetadata {
-        title
-        author
-      }
+      ...SiteInformation
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
+      ...MarkdownRemarkInfo
     }
   }
 `
