@@ -1,14 +1,10 @@
-/**
- * Bio component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import React, { ComponentProps, forwardRef, Ref } from "react"
 import styled from "styled-components"
+
+import { BioQueryQuery } from "../../graphql-types"
+import { NoUndefinedField } from "../types"
 import { rhythm } from "../utils/typography"
 
 const Content = styled.div`
@@ -30,7 +26,7 @@ const Avatar = styled(GatsbyImage)`
 `
 
 export const Bio = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<NoUndefinedField<BioQueryQuery>>(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {

@@ -1,13 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Helmet from "react-helmet"
+
+import { SeoQuery } from "../apollo-graphql"
+import { NoUndefinedField } from "../types"
 
 interface Meta {
   name: string
@@ -28,15 +24,11 @@ export const SEO = (props: Props) => {
   const keywords = props.keywords || []
   const description = props.description || ""
 
-  const { site } = useStaticQuery(
+  const { site } = useStaticQuery<NoUndefinedField<SeoQuery>>(
     graphql`
-      query {
+      query SeoQuery {
         site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+          ...SiteInformation
         }
       }
     `
