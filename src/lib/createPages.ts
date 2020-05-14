@@ -1,15 +1,7 @@
 import path from "path"
 
-import { GatsbyCreatePages } from "../types"
-
-interface Post {
-  node: {
-    fileAbsolutePath: string
-    fields: {
-      slug: string
-    }
-  }
-}
+import { CreatePagesQuery } from "../apollo-graphql"
+import { GatsbyCreatePages, RequiredProperty } from "../types"
 
 export const createPages: GatsbyCreatePages = async ({
   graphql,
@@ -18,18 +10,34 @@ export const createPages: GatsbyCreatePages = async ({
   const { createPage } = boundActionCreators
 
   const allMarkdown = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
+    query CreatePagesQuery {
+      notesQuery: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "note" } } }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
           node {
-            fileAbsolutePath
+            id
+            excerpt(pruneLength: 250)
             fields {
+              title
               slug
             }
-            frontmatter {
+          }
+        }
+      }
+
+      postsQuery: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "blog-post" } } }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
               title
             }
           }
@@ -42,12 +50,10 @@ export const createPages: GatsbyCreatePages = async ({
     throw allMarkdown.errors
   }
 
+  const data: RequiredProperty<CreatePagesQuery> = allMarkdown.data
   // Create blog posts pages.
-  const entries = allMarkdown.data.allMarkdownRemark.edges
-  const posts = entries.filter(
-    (entry: Post) => entry.node.fileAbsolutePath.indexOf("/blog/") > -1
-  )
-  posts.forEach((post: Post, index: number) => {
+  const posts = data.postsQuery.edges
+  posts.forEach((post, index: number) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
@@ -64,10 +70,8 @@ export const createPages: GatsbyCreatePages = async ({
   })
 
   // Create pages for notes.
-  const notes = entries.filter(
-    (entry: Post) => entry.node.fileAbsolutePath.indexOf("/notes/") > -1
-  )
-  notes.forEach((note: Post, index: number) => {
+  const notes = data.notesQuery.edges
+  notes.forEach((note, index: number) => {
     const previous = index === notes.length - 1 ? null : notes[index + 1].node
     const next = index === 0 ? null : notes[index - 1].node
 

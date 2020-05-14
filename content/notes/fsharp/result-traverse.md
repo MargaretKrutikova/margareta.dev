@@ -2,9 +2,10 @@
 path: fsharp-result-traverse
 date: 2020-05-03T21:27:59.831Z
 title: F# Traverse on Result
-category: notes
+category: note
 language: fsharp
 tags: [fsharp, functional, traverse]
+published: true
 description: F# Traverse on Result
 ---
 
