@@ -1,6 +1,7 @@
 ---
 title: My Second Post!
 category: blog-post
+published: true
 date: "2015-05-06T23:46:37.121Z"
 ---
 

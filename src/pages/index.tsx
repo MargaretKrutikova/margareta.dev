@@ -25,7 +25,12 @@ const BlogIndex = (props: Props) => {
         ...SiteInformation
       }
       allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "blog-post" } } }
+        filter: {
+          frontmatter: {
+            category: { eq: "blog-post" }
+            published: { ne: false }
+          }
+        }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
         ...MarkdownRemarksShortInfo

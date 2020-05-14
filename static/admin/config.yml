@@ -16,9 +16,10 @@ collections:
     public_folder: ""
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: path, label: Path, optional: true }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: published, label: Published, widget: "boolean", default: false }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
 
@@ -30,7 +31,7 @@ collections:
     public_folder: ""
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: path, label: Path, optional: true }
       - { name: date, label: Date, widget: date }
       - { name: category, default: "notes" }
       - { name: title, label: Title }
