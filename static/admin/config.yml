@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: margaretkrutikova/physics-blog
+  repo: margaretkrutikova/margareta.dev
 
 local_backend: true
 
