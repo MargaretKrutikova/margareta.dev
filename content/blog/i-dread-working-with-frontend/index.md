@@ -38,4 +38,6 @@ This is madness my dear friends. No, I don't want to be frontend developer any m
 I have seen developers who are scared to work with frontend, and I understand why - it is all new and they haven't seen much of it. I am the opposite - I feel like I have seen too much to have a reason to be scared. 
 From implementing close on click outside and fighting some `npm` library with a component that uses `event.stopPropagation` and steels the click event so you can never ever be done with your little click-outside feature. Friends don't let friends stop propagating events! Especially if those friends are creating an `npm` library.
 
-My fear originates from a complete uncertainty regardless of how much experience in Frontend you have. This new feature request to open the dropdown from an `npm` library on click on the small icon might take anywhere from an hour to weeks of dreadful headbang work. 
+My fear originates from a complete uncertainty regardless of how much experience in Frontend you have. This new feature request to open the dropdown from an `npm` library on click on the small icon might take anywhere from an hour to weeks of dreadful headbang work.
+
+I am sorry for the rant, I am not feeling well. 
