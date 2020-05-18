@@ -1,4 +1,11 @@
-# A road to state machines
+---
+path: road-to-state-machines
+date: 2020-05-18T23:29:59.831Z
+title: A road to state machines
+category: note
+tags: []
+published: true
+---
 
 Hello everyone! My name is Margarita and this is my first talk at a remote meetup, so it feels a bit different to have the audience so far away, so please feel free to ask any questions any time in chat, so we can have some interactions during the talk.
 
