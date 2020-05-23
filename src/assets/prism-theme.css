@@ -52,7 +52,7 @@ code[class*="language-"]::mozselection {
   }
 }
 pre[class*="language-"] {
-  padding: 1em;
+  padding: 1em 1.4em;
   margin: 0.5em 0;
   overflow: auto;
   background: #f9f6ef;

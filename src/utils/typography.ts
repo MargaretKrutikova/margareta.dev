@@ -27,7 +27,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: "Nunito+Sans",
-      styles: ["400", "400i", "600", "600i", "900", "900i"],
+      styles: ["400", "400i", "600", "600i", "800", "800i", "900", "900i"],
     },
   ],
   overrideStyles: (arg, options) => ({
@@ -40,6 +40,9 @@ const typography = new Typography({
     },
     "ul,ol": {
       marginLeft: arg.rhythm(1),
+    },
+    strong: {
+      fontWeight: 800,
     },
     li: {
       marginBottom: arg.rhythm(0.2),

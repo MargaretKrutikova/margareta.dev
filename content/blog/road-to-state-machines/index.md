@@ -25,13 +25,21 @@ This is going to be a beginner introduction to state machines, so if you are alr
 
 - [A few words about state machine](#machine)
 - [Pack your bag, we are driving out](#road-trip-begins)
-  - [#1 Model domain data](##1-Model-domain-data)
-  -
-  -
-  -
-  State machine recap
-  Benefits
-  Recognizing state machines
+
+  - [#1 Model domain data](#1-model-domain-data)
+  - [#2 Model domain behavior](#2-model-domain-behavior)
+  - [#3 Model core feature](#3-model-core-feature)
+  - [#4 What went wrong](#4-what-went-wrong)
+  - [#5 Making state and input explicit](#5-making-state-and-input-explicit)
+  - [#6 Transition function](#6-transition-function)
+  - [#7 Visualizing](#7-visualizing)
+  - [#8 Implementing transitions](#8-implementing-transitions)
+  - [#9 Use as reducer](#9-use-as-reducer)
+  - [#10 Use in UI](#10-use-in-ui)
+
+- [State machine recap](#recap)
+- [Benefits](#benefits)
+- [Recognizing state machines](#use-cases)
 
 ## Machine
 
@@ -164,7 +172,7 @@ Next, our user inputs (such as user pressing on log in/log out or setting tempor
 
 We are getting on the right track here. And we have realized that to get to our destination we need to re-implement our domain properly by first making our states and inputs **explicit**.
 
-### #4 Making state and input explicit
+### #5 Making state and input explicit
 
 Let's explicitly define our state and inputs:
 
@@ -182,7 +190,7 @@ type userInput =
 
 It became clear that the state should modelled as a variant (discriminated union). For the input type we are also using a variant explicitly marking what inputs are going to trigger changes in our state.
 
-### #5 Transition function
+### #6 Transition function
 
 We have already noticed that input in combination with the current state will determine the next state. Let's encode this behavior in a function, which we will **transition** function, since it will transition us from the current state to the next one when we detect user input. This is where we define the behavior of our user model and how it responds to the external input.
 
@@ -194,13 +202,13 @@ Not all of them are going to be valid (like trying to set a temporary name while
 
 At first, it might feel overwhelming to think through all those combinations, so we could create a table for states and inputs and write down outcomes for those combinations, or we can visualize our state machine with an online tool, created as part of [`xstate`](https://github.com/davidkpiano/xstate), a library for implementing state machines in `typescript` projects.
 
-### #6 Visualizing
+### #7 Visualizing
 
 We start in some initial state, that makes sense for our domain. In our case it makes sense for the user to start in `Anonymous` state. After that, we can start triggering some events to transition into other states.
 
 Click through and explore the behavior of your system.
 
-### #7 Implementing transitions
+### #8 Implementing transitions
 
 Our transition function will handle four valid transitions, while the other 5 are going to be invalid, in which case the function will just return the current state:
 
@@ -231,7 +239,7 @@ Notice how we include all possible transitions **explicitly**, without using the
 
 This helps to account for all edge cases, plus we when we extend our user and add a state or an input, we will immediately see what cases we are not handled. While it is tempting to use `_` for all default cases and might save you a few lines of code, it should be avoided in most cases.
 
-### #8 Use as reducer
+### #9 Use as reducer
 
 If we are writing a React application, we can plug in our transition function as-is in `useReducer` hook to manage our component's state:
 
@@ -249,7 +257,7 @@ let make = () => {
 
 Isn't it beautiful?
 
-### #9 Use in UI
+### #10 Use in UI
 
 And the last example is how to use our state and pattern matching in a `react` component. Let's give the user some hints on whether he can post questions:
 
