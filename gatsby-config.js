@@ -73,6 +73,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -107,7 +108,7 @@ module.exports = {
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
               // bash highlighter.
-              aliases: {},
+              aliases: { reasonml: "reason" },
               // This toggles the display of line numbers globally alongside the code.
               // To use it, add the following line in gatsby-browser.js
               // right after importing the prism color scheme:

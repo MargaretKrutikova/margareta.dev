@@ -41,3 +41,8 @@ code[class*="language-"] {
 pre[class*="language-"] {
   border-radius: 5px;
 }
+
+a.anchor.before {
+  text-decoration: none;
+  box-shadow: none;
+}
