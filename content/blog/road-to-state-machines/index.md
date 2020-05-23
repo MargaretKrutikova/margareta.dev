@@ -1,10 +1,14 @@
 ---
-path: road-to-state-machines
-date: 2020-05-18T23:29:59.831Z
+path: Road to state machines
+date: 2020-05-23T17:00:59.831Z
 title: A road to state machines
 category: blog-post
 tags: []
 published: true
+---
+
+This article is compiled from my talk about state machines, I gave on the 20th of May, 2020 at a ReasonSTHLM remote meetup. It is quite long, but you can find direct links to all parts of the talk, which correspond to slides from my presentation, in the [agenda](#agenda) section.
+
 ---
 
 I called this one a road to state machines and what I want to do here is to explain the concept of state machine applied to state modelling on a practical example, where we will try to implement a little feature together.
@@ -13,17 +17,21 @@ The road symbolizes that we are going on a trip (call it a road trip if you'd li
 
 ## Before we start
 
-The article assumes some basic knowledge of functional concepts, such variants (or discriminated unions in other languages), pattern matching and pure functions/immutability. The examples are written in ReasonML, but it should be quite easy to apply them in other languages since the concepts are going to be similar everywhere.
+The article assumes some basic knowledge of functional concepts, such variants (or discriminated unions in other languages), pattern matching and pure functions/immutability. The examples are provided in `ReasonML`.
 
 This is going to be a beginner introduction to state machines, so if you are already an experienced user of state machines, you might not discover anything new for yourself, but I hope it will still be a fun read.
 
 ## Agenda
 
-A few words about state machine
-Pack your bag, we are driving out
-State machine recap
-Benefits
-Recognizing state machines
+- [A few words about state machine](#machine)
+- [Pack your bag, we are driving out](#road-trip-begins)
+  - [#1 Model domain data](##1-Model-domain-data)
+  -
+  -
+  -
+  State machine recap
+  Benefits
+  Recognizing state machines
 
 ## Machine
 
@@ -215,11 +223,13 @@ let transition = (user, input) => {
 };
 ```
 
-The important part here is pattern matching on the state first, and not on the input, since the state machine pattern emphasizes state and it is the state that should make the primary decisions. This is different from a `reducer` pattern, where you pattern match on the action (~input), changing your state accordingly. I sometimes think of `reducer` as a half state machine.
+The important part here is pattern matching on the state first, and not on the input. This is because the state machine emphasizes state and it is the state that should make the primary decisions.
 
-Notice how we include all possible transitions explicitly, without using the underscore wildcard to handle the default case. The biggest benefit we get from doing so, is compiler warnings when **non-exhaustive pattern matching** is detected - simply when we forget to handle a case. This helps to account for all edge cases, plus we when we extend our user and add a state or an input, we will immediately see what cases we are not handling.
+This is different from the `reducer` pattern, where you pattern match on the action (~input), changing your state accordingly. I sometimes think of `reducer` as a half state machine.
 
-While it is tempting to use `_` for all default cases and might save you a few lines of code, should be avoided in most cases.
+Notice how we include all possible transitions **explicitly**, without using the underscore wildcard to handle the default case. The biggest benefit we get from doing so, is compiler warnings when **non-exhaustive pattern matching** is detected - simply when we forget to handle a case.
+
+This helps to account for all edge cases, plus we when we extend our user and add a state or an input, we will immediately see what cases we are not handled. While it is tempting to use `_` for all default cases and might save you a few lines of code, it should be avoided in most cases.
 
 ### #8 Use as reducer
 
@@ -296,13 +306,13 @@ moreover you start understanding the domain better, and might be able to discove
 You become more structured and organized because there is a clear path.
 Overall, I see a lot of benefits not only for the users of our less buggy systems, but also for us, developers.
 
+![I am way too happy!!!!](https://s3.amazonaws.com/media-p.slid.es/uploads/1096085/images/7369552/pasted-from-clipboard.png)
+
 ## Use cases
 
-Boolean flags
-isValid, isLoading, isError,
-Options
-error, validResponse etc.
-A flood of If-checks
+- Boolean flags, like `isValid`, `isLoading`, `isError` etc.,
+- Options, like `error: option(string)`, `validResponse: option(ApiDate)` etc.
+- A flood of `if`-checks and pattern matching on all those flags and options.
 
 ```reason
 type apiRequest('t) = {
@@ -311,3 +321,11 @@ type apiRequest('t) = {
   error: option(string),
 };
 ```
+
+<img src="homer.gif" alt="drawing" width="300" />
+
+There is nothing better than finishing a story with a screaming Homer Simpson.
+
+## Resources
+
+Knowledge and inspiration came from a number of resources, most useful of which where `fsharpforfunandprofit` on [representing states](https://fsharpforfunandprofit.com/posts/designing-with-types-representing-states/) and [making illegal states unrepresentable](https://fsharpforfunandprofit.com/posts/designing-with-types-making-illegal-states-unrepresentable/)

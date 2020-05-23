@@ -41,6 +41,9 @@ const typography = new Typography({
     "ul,ol": {
       marginLeft: arg.rhythm(1),
     },
+    li: {
+      marginBottom: arg.rhythm(0.2),
+    },
     [MIN_TABLET_MEDIA_QUERY]: {
       p: {
         marginBottom: arg.rhythm(0.8),
