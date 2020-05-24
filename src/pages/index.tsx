@@ -59,8 +59,9 @@ const BlogIndex = (props: Props) => {
             <Title>
               <StyledLink to={slug}>{title}</StyledLink>
             </Title>
-            <small>{fields.date}</small>
-            <small>{fields.category}</small>
+            <small>
+              {fields.date}, <strong>{fields.category}</strong>
+            </small>
             <p
               dangerouslySetInnerHTML={{
                 __html: fields.description || excerpt,

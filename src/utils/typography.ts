@@ -35,6 +35,9 @@ const typography = new Typography({
     "h1,h2,h3,h4,h5,h6": {
       marginTop: arg.rhythm(1.3),
     },
+    "h2, h3, h4": {
+      marginBottom: arg.rhythm(0.8),
+    },
     p: {
       marginBottom: arg.rhythm(0.8),
     },

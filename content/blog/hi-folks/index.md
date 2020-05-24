@@ -2,7 +2,7 @@
 title: New Beginnings
 date: "2015-05-28T22:40:32.169Z"
 category: blog-post
-published: true
+published: false
 description: This is a custom description for Seo and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
