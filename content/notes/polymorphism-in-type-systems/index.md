@@ -8,13 +8,15 @@ published: true
 description: Different types of polymorphism and comparison between languages
 ---
 
+Polymorphism can be defined as a way of representing multiple different types in a single abstraction.
+
 ## Structural vs nominal type systems
 
 How the type system decides if the types are equivalent (1) or have a subtype-relationship (2)?
 
 1. Structural typing
 
-**Answer**: Structure of types Properties of types are identical.
+**Answer**: Structure of types. Properties of types must be identical in order for the types to be identical.
 **Examples**: `OCaml`, `Typescript`, `Haskell`.
 Common for dynamically-typed languages.
 
@@ -30,15 +32,19 @@ See [link](https://web.archive.org/web/20161013053206/http://c2.com/cgi/wiki?Nom
 
 1. Subtyping
 
-Relation between types. Common for OOP languages, where it is referred to as **interface inheritance**. Not to be confused with inheritance, which is a relation between implementations.
+Restrict the range of types that can be used in a given abstraction (function or type) through relation between types.
+Common for OOP languages through **interface** or **subclassing**. Requires "substitute" relationship, subtypes/supertype.
 
-"Substitute" relationship, subtypes/supertype.
+Subtypes can be used in places of supertypes.
 
 **Examples**: `C#`, `Java`, `F#` (wtf)
 
 No support in `OCaml` due to the module systems and type signatures for modules.
 
 2. Parametric polymorphism (generics)
+
+Handle values generically without depending on their type.
+Generics in `Java` or `C#` and templates in `C++`.
 
 3. Row polymorphism
 
@@ -47,5 +53,8 @@ No support in `OCaml` due to the module systems and type signatures for modules.
 See [this](https://stackoverflow.com/questions/48092739/what-are-row-types-are-they-algebraic-data-types) SO answer.
 
 4. Ad-hoc polymorphism
+
+No relationship between the types is necessary (as opposed to subtyping). There concrete implementations for the different types.
+**Examples**: `Haskell` operator overloading and type classes.
 
 https://medium.com/@pmbanka/polymorphwhat-e3b36bbb2f99
