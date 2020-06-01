@@ -27,16 +27,17 @@ collections:
   - name: "notes"
     label: "Notes"
     folder: "content/notes"
-    path: "{{language}}/{{slug}}"
+    path: "{{slug}}/index"
     media_folder: ""
     public_folder: ""
     create: true
     fields:
       - { name: path, label: Path, optional: true }
       - { name: date, label: Date, widget: date }
-      - { name: category, default: "notes" }
+      - { name: category, default: "note" }
       - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: language, label: Language }
+      - { name: description, label: Description, optional: true }
+      - { name: language, label: Language, optional: true }
       - { name: tags, label: Tags, widget: "list" }
+      - { name: published, label: Published, widget: "boolean", default: false }
       - { name: body, label: Body, widget: markdown }

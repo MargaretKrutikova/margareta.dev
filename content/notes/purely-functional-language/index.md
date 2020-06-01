@@ -1,15 +1,13 @@
 ---
 path: Purely functional language
 date: 2020-05-31T19:15:51.591Z
-category: notes
+category: note
 title: Purely functional language
 description: Definition of a purely functional language
-language: NA
-tags:
-  - functional
-  - pure
-  - definition
+published: true
+tags: [functional, pure, definition]
 ---
+
 What is a "purely functional" programming language?
 
 > This question has been the subject of some debate in the functional programming community. It is widely agreed that languages such as Haskell and Miranda are "purely functional", while SML and Scheme are not. However, there are some small differences of opinion about the precise technical motivation for this distinction. One definition that has been suggested is as follows:
@@ -22,4 +20,4 @@ Taken from [FAQ University of Nottigham](http://www.cs.nott.ac.uk/~pszgmh/faq.ht
 
 And another one from [SO](https://softwareengineering.stackexchange.com/a/25062):
 
-> if language doesn't allow side-effects *without letting the type system know*, it's pure. Otherwise it's impure.
+> if language doesn't allow side-effects _without letting the type system know_, it's pure. Otherwise it's impure.
