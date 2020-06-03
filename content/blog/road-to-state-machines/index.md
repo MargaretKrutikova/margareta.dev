@@ -8,7 +8,7 @@ published: true
 description: A talk on state machines I gave at a ReasonSTHML remote meetup
 ---
 
-This article is compiled from my talk about state machines, I gave on the 20th of May, 2020 at a ReasonSTHLM remote meetup. It is quite long, but you can find direct links to all parts of the talk, which correspond to slides from my presentation, in the [agenda](#agenda) section.
+This article is compiled from my talk about state machines, I gave on the 20th of May, 2020 at a ReasonSTHLM remote meetup. It is quite long, but you can find direct links to all parts of the talk, which correspond to slides from my presentation, in the [agenda](#agenda) section. Youtube recording is available [here](https://www.youtube.com/watch?v=ggzn_ZyfVTU).
 
 ---
 
