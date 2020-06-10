@@ -205,6 +205,38 @@ export interface NotesPageQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: TilPageQuery
+// ====================================================
+
+export interface TilPageQuery_site_siteMetadata {
+  __typename: "SiteSiteMetadata";
+  title: string | null;
+  author: string | null;
+  description: string | null;
+}
+
+export interface TilPageQuery_site {
+  __typename: "Site";
+  siteMetadata: TilPageQuery_site_siteMetadata | null;
+}
+
+export interface TilPageQuery_markdownRemark {
+  __typename: "MarkdownRemark";
+  id: string;
+  html: string | null;
+}
+
+export interface TilPageQuery {
+  site: TilPageQuery_site | null;
+  markdownRemark: TilPageQuery_markdownRemark | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: BlogPostBySlug
 // ====================================================
 
@@ -814,6 +846,21 @@ export interface MarkdownRemarkInfo {
   excerpt: string | null;
   html: string | null;
   fields: MarkdownRemarkInfo_fields | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: TilInfo
+// ====================================================
+
+export interface TilInfo {
+  __typename: "MarkdownRemark";
+  id: string;
+  html: string | null;
 }
 
 /* tslint:disable */
