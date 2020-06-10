@@ -85,5 +85,11 @@ export const createPages: GatsbyCreatePages = async ({
     })
   })
 
+  // Today I learned
+  createPage({
+    path: "/til",
+    component: path.resolve(`./src/pages/til.tsx`),
+  })
+
   return null
 }

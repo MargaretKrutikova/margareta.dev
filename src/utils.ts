@@ -8,6 +8,8 @@ export const getUrlPath = (node: Node) => {
       return `/blog`
     case Category.Note:
       return "/notes"
+    case Category.TIL:
+      return "/til"
     default:
       return "/"
   }

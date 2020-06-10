@@ -30,6 +30,7 @@ export type GatsbyCreatePages = (fns: {
 export enum Category {
   BlogPost = "blog-post",
   Note = "note",
+  TIL = "til",
 }
 
 export type RequiredProperty<T> = {
