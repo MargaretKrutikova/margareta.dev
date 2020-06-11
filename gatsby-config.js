@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-remove-serviceworker`,
 
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
