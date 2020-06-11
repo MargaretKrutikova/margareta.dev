@@ -14,12 +14,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       getNode,
     })
 
-    const value = `${getUrlPath(node)}${relativeFilePath}`
-
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: relativeFilePath,
     })
 
     createNodeField({
