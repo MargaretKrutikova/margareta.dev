@@ -59,4 +59,7 @@ export interface CreatePagesQuery {
   postsQuery: {
     edges: Array<{ node: MarkdownRemarkContextInfo }>
   }
+  tilQuery: {
+    fields: MarkdownFields | null
+  }
 }

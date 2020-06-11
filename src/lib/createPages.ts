@@ -26,6 +26,14 @@ export const createPages: GatsbyCreatePages = async ({
         }
       }
 
+      tilQuery: markdownRemark(fields: { category: { eq: "til" } }) {
+        id
+        fields {
+          title
+          slug
+        }
+      }
+
       postsQuery: allMarkdownRemark(
         filter: { frontmatter: { category: { eq: "blog-post" } } }
         sort: { order: DESC, fields: frontmatter___date }
@@ -57,7 +65,6 @@ export const createPages: GatsbyCreatePages = async ({
 
     createPage({
       path: post.node.fields.slug,
-      // tslint:disable-next-line:object-literal-sort-keys
       component: path.resolve(`./src/templates/blog-post.tsx`),
       context: {
         next,
@@ -75,7 +82,6 @@ export const createPages: GatsbyCreatePages = async ({
 
     createPage({
       path: note.node.fields.slug,
-      // tslint:disable-next-line:object-literal-sort-keys
       component: path.resolve(`./src/templates/note.tsx`),
       context: {
         next,
@@ -85,11 +91,19 @@ export const createPages: GatsbyCreatePages = async ({
     })
   })
 
-  // Today I learned
-  createPage({
-    path: "/random",
-    component: path.resolve(`./src/pages/til.tsx`),
-  })
+  //  Today I learned
+  if (data.tilQuery && data.tilQuery.fields) {
+    const tilSlug = data.tilQuery.fields.slug
+    createPage({
+      path: tilSlug,
+      component: path.resolve(`src/templates/til.tsx`),
+      context: {
+        next: null,
+        previous: null,
+        slug: tilSlug,
+      },
+    })
+  }
 
   return null
 }
