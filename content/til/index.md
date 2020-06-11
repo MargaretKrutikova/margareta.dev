@@ -10,9 +10,11 @@ description: what I learn every day
 
 ## TIL #1
 
+<small> #git, #windows, </small><small>2020-06-10</small>
+
 Rename case-only directory on `Windows` in a `git` repo:
 
 ```sh
-$ git mv docs DOCS2
-$ git mv DOCS2 DOCS
+$ git mv docs DocsS2
+$ git mv Docs2 Docs
 ```
