@@ -87,7 +87,7 @@ export const createPages: GatsbyCreatePages = async ({
 
   // Today I learned
   createPage({
-    path: "/til/",
+    path: "/random",
     component: path.resolve(`./src/pages/til.tsx`),
   })
 
