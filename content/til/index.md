@@ -8,6 +8,25 @@ description: what I learn every day
 
 # T.I.L. - Today I learned
 
+## TIL #4
+
+<small> #typescript, #react, </small><small>2020-06-12</small>
+
+Tagged union can help avoid invalid states, e.g. passing nullable id when in fact it can never be null:
+
+```tsx
+type State = { status: "Empty" } | { status: "SelectedProject"; id: number }
+
+const App = () => {
+  ...
+  return state.status === "Empty" ? (
+    <NoProjectsAvailable />
+  ) : (
+    <SelectedProject id={state.id} />
+  )
+}
+```
+
 ## TIL #3
 
 <small> #git, </small><small>2020-06-12</small>
