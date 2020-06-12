@@ -8,6 +8,21 @@ description: what I learn every day
 
 # T.I.L. - Today I learned
 
+## TIL #3
+
+<small> #git, </small><small>2020-06-12</small>
+
+You can cherry-pick only some specific changes in a commit in `git`:
+
+```sh
+git cherry-pick -n <commit_hash>
+# the changes appear as staged
+# unstage/modify/stage
+git commit -m "Fix stuff"
+```
+
+You can inspect and modify the result and then commit. Awesome!
+
 ## TIL #2
 
 <small> #gatsby, #react, </small><small>2020-06-11</small>
