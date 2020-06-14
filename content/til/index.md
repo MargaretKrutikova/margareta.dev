@@ -8,6 +8,23 @@ description: what I learn every day
 
 # T.I.L. - Today I learned
 
+https://www.shellhacks.com/docker-reload-nginx-inside-container/
+
+docker container exec <container> nginx -s reload
+
+## TIL #6
+
+<small> #dev-ops, #docker, </small><small>2020-06-14</small>
+
+You can reload `nginx` configuration inside your `docker` container without restarting the whole container, [source](https://www.shellhacks.com/docker-reload-nginx-inside-container/). Find the id of your `nginx` container and send `reload` signal to it:
+
+```sh
+$ docker ps
+# check whether the configuration is valid
+$ docker container exec <container> nginx -t
+$ docker container exec <container> nginx -s reload
+```
+
 ## TIL #5
 
 <small> #dev-ops, #docker, </small><small>2020-06-14</small>
