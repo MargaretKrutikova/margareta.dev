@@ -8,10 +8,6 @@ description: what I learn every day
 
 # T.I.L. - Today I learned
 
-https://www.shellhacks.com/docker-reload-nginx-inside-container/
-
-docker container exec <container> nginx -s reload
-
 ## TIL #6
 
 <small> #dev-ops, #docker, </small><small>2020-06-14</small>
