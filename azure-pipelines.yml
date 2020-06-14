@@ -25,5 +25,5 @@ steps:
     sshEndpoint: 'hasura-vm-ssh'
     sourceFolder: 'public'
     contents: '**'
-    targetFolder: '/home/margaretkru/nginx-certbot/data/frontend/blog'
+    targetFolder: '/home/margaretkru/www/margareta.dev'
     readyTimeout: '20000'
