@@ -8,6 +8,14 @@ description: what I learn every day
 
 # T.I.L. - Today I learned
 
+## TIL #5
+
+<small> #dev-ops, #docker, </small><small>2020-06-14</small>
+
+Difference between `docker-compose restart` and `docker-compose up`: `up` builds, recreates and starts the containers. Typically, you want `docker-compose up` since `restart` will not recreate them so any changes made to `docker-compose.yaml` are not going to be picked up.
+
+¯\\\_(ツ)\_/¯
+
 ## TIL #4
 
 <small> #typescript, #react, </small><small>2020-06-12</small>
