@@ -45,4 +45,5 @@ pre[class*="language-"] {
 a.anchor.before {
   text-decoration: none;
   box-shadow: none;
+  background-image: none;
 }

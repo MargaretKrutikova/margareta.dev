@@ -25,6 +25,15 @@ const Title = styled.h3`
   margin-bottom: 0;
 `
 
+const Tag = styled.span`
+  padding: 0 4px;
+  border-radius: 3px;
+  font-size: 0.95em;
+  white-space: nowrap;
+  margin-right: 8px;
+  background-color: ${colors.darkBeige};
+`
+
 const Date = styled.small`
   color: ${colors.darkGrey};
 `
@@ -63,13 +72,19 @@ const BlogIndex = (props: Props) => {
 
         const slug = fields.slug
         const title = fields.title || fields.slug
+        const tags = fields.tags || []
 
         return (
           <div key={slug}>
             <Title>
               <BlogPostLink to={slug}>{title}</BlogPostLink>
             </Title>
-            <Date>{fields.date}</Date>
+            <span>
+              <Date>{fields.date}, </Date>
+              {tags.map(tag => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </span>
             <p
               dangerouslySetInnerHTML={{
                 __html: fields.description || excerpt,
