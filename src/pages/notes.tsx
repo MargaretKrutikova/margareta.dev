@@ -5,6 +5,7 @@ import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
 import { NotesPageQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
+import { NavigationMenu } from "../components/navigation"
 import { SEO } from "../components/seo"
 import { TagsSection } from "../components/tagsSection"
 import { NoUndefinedField } from "../types"
@@ -12,15 +13,14 @@ import { getUniqueTags } from "../utils/common"
 import { colors } from "../utils/theme"
 import { rhythm } from "../utils/typography"
 
-const StyledLink = styled(Link)`
+const NoteLink = styled(Link)`
   box-shadow: none;
-  color: ${colors.pink};
-`
-
-const StyledH3 = styled.h3`
-  font-family: Montserrat, sans-serif;
-  margin-top: 0;
-  font-size: 1em;
+  background-image: none;
+  color: ${colors.darkPink};
+  transition: 200ms color;
+  &:hover {
+    color: ${colors.pink};
+  }
 `
 
 const NoteTitle = styled.h3`
@@ -90,7 +90,7 @@ const Notes = (props: Props) => {
   return (
     <Layout variant="wide" location={props.location} title={siteTitle}>
       <SEO title="All notes" keywords={[`notes`, `code`]} />
-      <StyledH3>/notes</StyledH3>
+      <NavigationMenu />
       <Container>
         <TagsSection
           onClick={handleTagClick}
@@ -101,7 +101,7 @@ const Notes = (props: Props) => {
           {visibleNotes.map(({ node: { fields, excerpt } }) => (
             <NoteListItem key={fields.slug}>
               <NoteTitle>
-                <StyledLink to={fields.slug}>{fields.title}</StyledLink>
+                <NoteLink to={fields.slug}>{fields.title}</NoteLink>
               </NoteTitle>
               {/* <small>{fields.date}</small> */}
               <Description
