@@ -33,7 +33,6 @@ const StyledLink = styled(Link)`
 `
 
 const Header = styled.header`
-  max-width: ${rhythm(22)};
   margin-left: auto;
   margin-right: auto;
 `
@@ -41,13 +40,11 @@ const Header = styled.header`
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(22)};
+  max-width: ${rhythm(24)};
   padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
   ${MOBILE_MEDIA_QUERY} {
     padding: ${`${rhythm(1.5)} ${rhythm(1 / 2)}`};
   }
-  max-width: ${(props: any) =>
-    props.variant === "wide" ? rhythm(22) : rhythm(22)};
 `
 
 const Footer = styled.footer`
