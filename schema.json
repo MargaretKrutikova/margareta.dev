@@ -1496,6 +1496,16 @@
                 "defaultValue": null
               },
               {
+                "name": "tags",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "frontmatter",
                 "description": null,
                 "type": {
@@ -1866,11 +1876,11 @@
                 "defaultValue": null
               },
               {
-                "name": "childGrvscCodeBlock",
+                "name": "childrenGrvscCodeBlock",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "GRVSCCodeBlockFilterInput",
+                  "name": "GRVSCCodeBlockFilterListInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -3979,11 +3989,11 @@
             "defaultValue": null
           },
           {
-            "name": "childGrvscCodeBlock",
+            "name": "childrenGrvscCodeBlock",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "GRVSCCodeBlockFilterInput",
+              "name": "GRVSCCodeBlockFilterListInput",
               "ofType": null
             },
             "defaultValue": null
@@ -4040,17 +4050,7 @@
             "defaultValue": null
           },
           {
-            "name": "language",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "tags",
+            "name": "description",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4070,7 +4070,17 @@
             "defaultValue": null
           },
           {
-            "name": "description",
+            "name": "tags",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "language",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4257,6 +4267,27 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "GRVSCCodeBlockFilterListInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "elemMatch",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "GRVSCCodeBlockFilterInput",
               "ofType": null
             },
             "defaultValue": null
@@ -4866,6 +4897,16 @@
             "defaultValue": null
           },
           {
+            "name": "tags",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "frontmatter",
             "description": null,
             "type": {
@@ -5067,16 +5108,6 @@
             "defaultValue": null
           },
           {
-            "name": "language",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "tags",
             "description": null,
             "type": {
@@ -5098,6 +5129,16 @@
           },
           {
             "name": "description",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "language",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -5169,6 +5210,16 @@
           },
           {
             "name": "category",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "tags",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -9015,13 +9066,17 @@
             "deprecationReason": null
           },
           {
-            "name": "childGrvscCodeBlock",
+            "name": "childrenGrvscCodeBlock",
             "description": null,
             "args": [],
             "type": {
-              "kind": "OBJECT",
-              "name": "GRVSCCodeBlock",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "GRVSCCodeBlock",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -9137,12 +9192,24 @@
             "deprecationReason": null
           },
           {
-            "name": "language",
+            "name": "description",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "published",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -9165,19 +9232,7 @@
             "deprecationReason": null
           },
           {
-            "name": "published",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "description",
+            "name": "language",
             "description": null,
             "args": [],
             "type": {
@@ -9951,6 +10006,30 @@
             "deprecationReason": null
           },
           {
+            "name": "tags",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "frontmatter",
             "description": null,
             "args": [],
@@ -10361,18 +10440,6 @@
             "deprecationReason": null
           },
           {
-            "name": "language",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "tags",
             "description": null,
             "args": [],
@@ -10402,6 +10469,18 @@
           },
           {
             "name": "description",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "language",
             "description": null,
             "args": [],
             "type": {
@@ -10561,6 +10640,22 @@
               "kind": "SCALAR",
               "name": "String",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "tags",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -12471,13 +12566,7 @@
             "deprecationReason": null
           },
           {
-            "name": "childMdx___frontmatter___language",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "childMdx___frontmatter___tags",
+            "name": "childMdx___frontmatter___description",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -12489,7 +12578,13 @@
             "deprecationReason": null
           },
           {
-            "name": "childMdx___frontmatter___description",
+            "name": "childMdx___frontmatter___tags",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMdx___frontmatter___language",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -12795,199 +12890,211 @@
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___id",
+            "name": "childMdx___childrenGrvscCodeBlock",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___parent___id",
+            "name": "childMdx___childrenGrvscCodeBlock___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___parent___children",
+            "name": "childMdx___childrenGrvscCodeBlock___parent___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___children",
+            "name": "childMdx___childrenGrvscCodeBlock___parent___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___children___id",
+            "name": "childMdx___childrenGrvscCodeBlock___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___children___children",
+            "name": "childMdx___childrenGrvscCodeBlock___children___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___content",
+            "name": "childMdx___childrenGrvscCodeBlock___children___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___contentDigest",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___content",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___description",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___contentDigest",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___fieldOwners",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___description",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___ignoreType",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___fieldOwners",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___mediaType",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___ignoreType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___owner",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___mediaType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___internal___type",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___owner",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___index",
+            "name": "childMdx___childrenGrvscCodeBlock___internal___type",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___text",
+            "name": "childMdx___childrenGrvscCodeBlock___index",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___html",
+            "name": "childMdx___childrenGrvscCodeBlock___text",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___preClassName",
+            "name": "childMdx___childrenGrvscCodeBlock___html",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___codeClassName",
+            "name": "childMdx___childrenGrvscCodeBlock___preClassName",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___language",
+            "name": "childMdx___childrenGrvscCodeBlock___codeClassName",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___defaultTheme___identifier",
+            "name": "childMdx___childrenGrvscCodeBlock___language",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___defaultTheme___path",
+            "name": "childMdx___childrenGrvscCodeBlock___defaultTheme___identifier",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___defaultTheme___conditions",
+            "name": "childMdx___childrenGrvscCodeBlock___defaultTheme___path",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___additionalThemes",
+            "name": "childMdx___childrenGrvscCodeBlock___defaultTheme___conditions",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___additionalThemes___identifier",
+            "name": "childMdx___childrenGrvscCodeBlock___additionalThemes",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___additionalThemes___path",
+            "name": "childMdx___childrenGrvscCodeBlock___additionalThemes___identifier",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___additionalThemes___conditions",
+            "name": "childMdx___childrenGrvscCodeBlock___additionalThemes___path",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___tokenizedLines",
+            "name": "childMdx___childrenGrvscCodeBlock___additionalThemes___conditions",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___tokenizedLines___text",
+            "name": "childMdx___childrenGrvscCodeBlock___tokenizedLines",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___tokenizedLines___className",
+            "name": "childMdx___childrenGrvscCodeBlock___tokenizedLines___text",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___tokenizedLines___tokens",
+            "name": "childMdx___childrenGrvscCodeBlock___tokenizedLines___className",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childMdx___childGrvscCodeBlock___tokenizedLines___html",
+            "name": "childMdx___childrenGrvscCodeBlock___tokenizedLines___tokens",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMdx___childrenGrvscCodeBlock___tokenizedLines___html",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
             "name": "childMarkdownRemark___id",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMarkdownRemark___tags",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -13017,12 +13124,6 @@
             "deprecationReason": null
           },
           {
-            "name": "childMarkdownRemark___frontmatter___language",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "childMarkdownRemark___frontmatter___tags",
             "description": null,
             "isDeprecated": false,
@@ -13036,6 +13137,12 @@
           },
           {
             "name": "childMarkdownRemark___frontmatter___description",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMarkdownRemark___frontmatter___language",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -13090,6 +13197,12 @@
           },
           {
             "name": "childMarkdownRemark___fields___category",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childMarkdownRemark___fields___tags",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
@@ -16611,16 +16724,6 @@
             "defaultValue": null
           },
           {
-            "name": "name",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "extensions",
             "description": null,
             "type": {
@@ -16661,61 +16764,21 @@
             "defaultValue": null
           },
           {
-            "name": "backgroundColor",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "linkImagesToOriginal",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "showCaptions",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "pathPrefix",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "withWebp",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "classPrefix",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "aliases",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsAliasesFilterInput",
               "ofType": null
             },
             "defaultValue": null
@@ -16761,7 +16824,7 @@
             "defaultValue": null
           },
           {
-            "name": "ignoreFileExtensions",
+            "name": "name",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16933,6 +16996,26 @@
             "defaultValue": null
           },
           {
+            "name": "browserAPIs",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "ssrAPIs",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "pluginFilepath",
             "description": null,
             "type": {
@@ -16974,61 +17057,21 @@
             "defaultValue": null
           },
           {
-            "name": "backgroundColor",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "linkImagesToOriginal",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "showCaptions",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "pathPrefix",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
-            "name": "withWebp",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "classPrefix",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "aliases",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17072,9 +17115,20 @@
               "ofType": null
             },
             "defaultValue": null
-          },
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsPluginsPluginOptionsAliasesFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
           {
-            "name": "ignoreFileExtensions",
+            "name": "reasonml",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17305,6 +17359,27 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsAliasesFilterInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "reasonml",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null
@@ -18335,18 +18410,6 @@
             "deprecationReason": null
           },
           {
-            "name": "name",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "extensions",
             "description": null,
             "args": [],
@@ -18403,72 +18466,24 @@
             "deprecationReason": null
           },
           {
-            "name": "backgroundColor",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "linkImagesToOriginal",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "showCaptions",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pathPrefix",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "withWebp",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "classPrefix",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "aliases",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsAliases",
               "ofType": null
             },
             "isDeprecated": false,
@@ -18527,17 +18542,13 @@
             "deprecationReason": null
           },
           {
-            "name": "ignoreFileExtensions",
+            "name": "name",
             "description": null,
             "args": [],
             "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -18710,6 +18721,38 @@
             "deprecationReason": null
           },
           {
+            "name": "browserAPIs",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ssrAPIs",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pluginFilepath",
             "description": null,
             "args": [],
@@ -18757,72 +18800,24 @@
             "deprecationReason": null
           },
           {
-            "name": "backgroundColor",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "linkImagesToOriginal",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "showCaptions",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pathPrefix",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "withWebp",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "classPrefix",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "aliases",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsPluginsPluginOptionsAliases",
               "ofType": null
             },
             "isDeprecated": false,
@@ -18879,19 +18874,26 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsPluginsPluginOptionsAliases",
+        "description": null,
+        "fields": [
           {
-            "name": "ignoreFileExtensions",
+            "name": "reasonml",
             "description": null,
             "args": [],
             "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -19103,6 +19105,29 @@
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsAliases",
+        "description": null,
+        "fields": [
+          {
+            "name": "reasonml",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -20517,6 +20542,18 @@
             "deprecationReason": null
           },
           {
+            "name": "pluginCreator___pluginOptions___plugins___browserAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___pluginOptions___plugins___ssrAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pluginCreator___pluginOptions___plugins___pluginFilepath",
             "description": null,
             "isDeprecated": false,
@@ -20524,12 +20561,6 @@
           },
           {
             "name": "pluginCreator___pluginOptions___path",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginCreator___pluginOptions___name",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -20565,37 +20596,13 @@
             "deprecationReason": null
           },
           {
-            "name": "pluginCreator___pluginOptions___backgroundColor",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginCreator___pluginOptions___linkImagesToOriginal",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginCreator___pluginOptions___showCaptions",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginCreator___pluginOptions___pathPrefix",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginCreator___pluginOptions___withWebp",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "pluginCreator___pluginOptions___classPrefix",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___pluginOptions___aliases___reasonml",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -20649,7 +20656,7 @@
             "deprecationReason": null
           },
           {
-            "name": "pluginCreator___pluginOptions___ignoreFileExtensions",
+            "name": "pluginCreator___pluginOptions___name",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -23957,6 +23964,12 @@
             "deprecationReason": null
           },
           {
+            "name": "tags",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "frontmatter___title",
             "description": null,
             "isDeprecated": false,
@@ -23981,12 +23994,6 @@
             "deprecationReason": null
           },
           {
-            "name": "frontmatter___language",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "frontmatter___tags",
             "description": null,
             "isDeprecated": false,
@@ -24000,6 +24007,12 @@
           },
           {
             "name": "frontmatter___description",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter___language",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -24054,6 +24067,12 @@
           },
           {
             "name": "fields___category",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "fields___tags",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
@@ -25080,13 +25099,7 @@
             "deprecationReason": null
           },
           {
-            "name": "frontmatter___language",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "frontmatter___tags",
+            "name": "frontmatter___description",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -25098,7 +25111,13 @@
             "deprecationReason": null
           },
           {
-            "name": "frontmatter___description",
+            "name": "frontmatter___tags",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter___language",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -25692,385 +25711,391 @@
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___id",
+            "name": "childrenGrvscCodeBlock",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___id",
+            "name": "childrenGrvscCodeBlock___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___parent___id",
+            "name": "childrenGrvscCodeBlock___parent___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___parent___children",
+            "name": "childrenGrvscCodeBlock___parent___parent___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___children",
+            "name": "childrenGrvscCodeBlock___parent___parent___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___children___id",
+            "name": "childrenGrvscCodeBlock___parent___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___children___children",
+            "name": "childrenGrvscCodeBlock___parent___children___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___content",
+            "name": "childrenGrvscCodeBlock___parent___children___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___contentDigest",
+            "name": "childrenGrvscCodeBlock___parent___internal___content",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___description",
+            "name": "childrenGrvscCodeBlock___parent___internal___contentDigest",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___fieldOwners",
+            "name": "childrenGrvscCodeBlock___parent___internal___description",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___ignoreType",
+            "name": "childrenGrvscCodeBlock___parent___internal___fieldOwners",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___mediaType",
+            "name": "childrenGrvscCodeBlock___parent___internal___ignoreType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___owner",
+            "name": "childrenGrvscCodeBlock___parent___internal___mediaType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___parent___internal___type",
+            "name": "childrenGrvscCodeBlock___parent___internal___owner",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children",
+            "name": "childrenGrvscCodeBlock___parent___internal___type",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___id",
+            "name": "childrenGrvscCodeBlock___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___parent___id",
+            "name": "childrenGrvscCodeBlock___children___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___parent___children",
+            "name": "childrenGrvscCodeBlock___children___parent___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___children",
+            "name": "childrenGrvscCodeBlock___children___parent___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___children___id",
+            "name": "childrenGrvscCodeBlock___children___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___children___children",
+            "name": "childrenGrvscCodeBlock___children___children___id",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___content",
+            "name": "childrenGrvscCodeBlock___children___children___children",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___contentDigest",
+            "name": "childrenGrvscCodeBlock___children___internal___content",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___description",
+            "name": "childrenGrvscCodeBlock___children___internal___contentDigest",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___fieldOwners",
+            "name": "childrenGrvscCodeBlock___children___internal___description",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___ignoreType",
+            "name": "childrenGrvscCodeBlock___children___internal___fieldOwners",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___mediaType",
+            "name": "childrenGrvscCodeBlock___children___internal___ignoreType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___owner",
+            "name": "childrenGrvscCodeBlock___children___internal___mediaType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___children___internal___type",
+            "name": "childrenGrvscCodeBlock___children___internal___owner",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___content",
+            "name": "childrenGrvscCodeBlock___children___internal___type",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___contentDigest",
+            "name": "childrenGrvscCodeBlock___internal___content",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___description",
+            "name": "childrenGrvscCodeBlock___internal___contentDigest",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___fieldOwners",
+            "name": "childrenGrvscCodeBlock___internal___description",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___ignoreType",
+            "name": "childrenGrvscCodeBlock___internal___fieldOwners",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___mediaType",
+            "name": "childrenGrvscCodeBlock___internal___ignoreType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___owner",
+            "name": "childrenGrvscCodeBlock___internal___mediaType",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___internal___type",
+            "name": "childrenGrvscCodeBlock___internal___owner",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___index",
+            "name": "childrenGrvscCodeBlock___internal___type",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___text",
+            "name": "childrenGrvscCodeBlock___index",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___html",
+            "name": "childrenGrvscCodeBlock___text",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___preClassName",
+            "name": "childrenGrvscCodeBlock___html",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___codeClassName",
+            "name": "childrenGrvscCodeBlock___preClassName",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___language",
+            "name": "childrenGrvscCodeBlock___codeClassName",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___defaultTheme___identifier",
+            "name": "childrenGrvscCodeBlock___language",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___defaultTheme___path",
+            "name": "childrenGrvscCodeBlock___defaultTheme___identifier",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___defaultTheme___conditions",
+            "name": "childrenGrvscCodeBlock___defaultTheme___path",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___defaultTheme___conditions___condition",
+            "name": "childrenGrvscCodeBlock___defaultTheme___conditions",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___additionalThemes",
+            "name": "childrenGrvscCodeBlock___defaultTheme___conditions___condition",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___additionalThemes___identifier",
+            "name": "childrenGrvscCodeBlock___additionalThemes",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___additionalThemes___path",
+            "name": "childrenGrvscCodeBlock___additionalThemes___identifier",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___additionalThemes___conditions",
+            "name": "childrenGrvscCodeBlock___additionalThemes___path",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___additionalThemes___conditions___condition",
+            "name": "childrenGrvscCodeBlock___additionalThemes___conditions",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines",
+            "name": "childrenGrvscCodeBlock___additionalThemes___conditions___condition",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___text",
+            "name": "childrenGrvscCodeBlock___tokenizedLines",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___className",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___text",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___className",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens___text",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens___startIndex",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens___text",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens___endIndex",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens___startIndex",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens___scopes",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens___endIndex",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens___className",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens___scopes",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___tokens___html",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens___className",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
           },
           {
-            "name": "childGrvscCodeBlock___tokenizedLines___html",
+            "name": "childrenGrvscCodeBlock___tokenizedLines___tokens___html",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
+          },
+          {
+            "name": "childrenGrvscCodeBlock___tokenizedLines___html",
             "description": null,
             "isDeprecated": true,
             "deprecationReason": "Sorting on fields that need arguments to resolve is deprecated."
@@ -29314,36 +29339,6 @@
             "deprecationReason": null
           },
           {
-            "name": "pluginOptions___plugins___pluginOptions___backgroundColor",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___plugins___pluginOptions___linkImagesToOriginal",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___plugins___pluginOptions___showCaptions",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___plugins___pluginOptions___pathPrefix",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___plugins___pluginOptions___withWebp",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "pluginOptions___plugins___pluginOptions___classPrefix",
             "description": null,
             "isDeprecated": false,
@@ -29368,7 +29363,13 @@
             "deprecationReason": null
           },
           {
-            "name": "pluginOptions___plugins___pluginOptions___ignoreFileExtensions",
+            "name": "pluginOptions___plugins___browserAPIs",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___plugins___ssrAPIs",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -29381,12 +29382,6 @@
           },
           {
             "name": "pluginOptions___path",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___name",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -29464,37 +29459,13 @@
             "deprecationReason": null
           },
           {
-            "name": "pluginOptions___backgroundColor",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___linkImagesToOriginal",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___showCaptions",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___pathPrefix",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pluginOptions___withWebp",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "pluginOptions___classPrefix",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___aliases___reasonml",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -29548,7 +29519,7 @@
             "deprecationReason": null
           },
           {
-            "name": "pluginOptions___ignoreFileExtensions",
+            "name": "pluginOptions___name",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

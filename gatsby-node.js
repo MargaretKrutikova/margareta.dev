@@ -53,9 +53,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: "tags",
       node,
-      value: node.frontmatter.topics || [],
+      value: node.frontmatter.tags || [],
     })
   }
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      tags: [String!]!
+    }
+  `
+  createTypes(typeDefs)
 }
 
 exports.createPages = require("./src/lib/createPages").createPages
