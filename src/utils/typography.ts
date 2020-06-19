@@ -20,7 +20,7 @@ const typography = new Typography({
   baseLineHeight: 1.6,
   bodyFontFamily: ["Nunito Sans", "sans-serif"],
   headerFontFamily: ["Nunito Sans", "sans-serif"],
-  scaleRatio: 2,
+  scaleRatio: 1.8,
   headerWeight: 600,
   bodyWeight: 400,
   boldWeight: 600,
@@ -33,7 +33,7 @@ const typography = new Typography({
   overrideStyles: (arg, options) => ({
     ...Wordpress2016.overrideStyles(arg, options),
     "h1,h2,h3,h4,h5,h6": {
-      marginTop: arg.rhythm(1.3),
+      marginTop: arg.rhythm(1),
     },
     "h2, h3, h4": {
       marginBottom: arg.rhythm(0.8),

@@ -5,9 +5,12 @@ import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
 import { rhythm, styledScale } from "../utils/typography"
 
+type Variant = "default" | "wide"
+
 interface Props extends PageRendererProps {
   title: string
   children: ReactNode
+  variant?: Variant
 }
 
 const StyledH1 = styled.h1`
@@ -30,11 +33,13 @@ const StyledLink = styled(Link)`
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(22)};
+  max-width: ${rhythm(26)};
   padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
   ${MOBILE_MEDIA_QUERY} {
     padding: ${`${rhythm(1.5)} ${rhythm(1 / 2)}`};
   }
+  max-width: ${(props: any) =>
+    props.variant === "wide" ? rhythm(28) : rhythm(22)};
 `
 
 const Footer = styled.footer`
@@ -48,7 +53,7 @@ export const Layout = (props: Props) => {
   const HeaderTitle = location.pathname === rootPath ? StyledH1 : StyledH3
 
   return (
-    <Content>
+    <Content variant={props.variant}>
       <header>
         <HeaderTitle>
           <StyledLink to={`/`}>{title}</StyledLink>
