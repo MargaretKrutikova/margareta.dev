@@ -3,7 +3,7 @@ path: Type polymorphism
 date: 2020-05-27T00:26:00.831Z
 title: Type polymorphism
 category: note
-tags: [languages, polymorphism, nerd]
+tags: [languages, polymorphism]
 published: true
 description: Different types of polymorphism and comparison between languages
 ---

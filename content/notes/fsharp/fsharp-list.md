@@ -4,7 +4,7 @@ date: 2020-06-03T21:35:00.831Z
 title: F# list
 category: note
 language: fsharp
-tags: [fsharp, functional, list]
+tags: [fsharp, functional]
 published: true
 description: F# list - why avoid concat and prefer cons
 ---
