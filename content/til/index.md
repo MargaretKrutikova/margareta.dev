@@ -6,7 +6,16 @@ category: til
 description: what I learn every day
 ---
 
-# T.I.L. - Today I learned
+## TIL #6
+
+<small> #dev-ops, #docker, </small><small>2020-06-22</small>
+
+Kill the process locking a port on Mac:
+
+```sh
+$ sudo lsof -i tcp:3000
+$ kill -p PID
+```
 
 ## TIL #6
 

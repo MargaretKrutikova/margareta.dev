@@ -30,6 +30,7 @@ const PostNavigator = styled.ul`
   justify-content: space-between;
   list-style: none;
   padding: 0;
+  margin-left: 0;
 `
 
 const NoteTemplate = (props: Props) => {
