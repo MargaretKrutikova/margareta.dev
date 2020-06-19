@@ -32,7 +32,7 @@ const PostNavigator = styled.ul`
   padding: 0;
 `
 
-const BlogPostTemplate = (props: Props) => {
+const NoteTemplate = (props: Props) => {
   const { markdownRemark: post, site } = props.data
   const { fields, excerpt, html } = post
 
@@ -67,7 +67,7 @@ const BlogPostTemplate = (props: Props) => {
   )
 }
 
-export default BlogPostTemplate
+export default NoteTemplate
 
 export const pageQuery = graphql`
   query NoteBySlug($slug: String!) {
