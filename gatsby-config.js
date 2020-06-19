@@ -3,7 +3,7 @@ module.exports = {
     title: `margareta.dev`,
     author: `Rita Krutikova`,
     description: `A place for words.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://margareta.dev/`,
     social: {
       twitter: `rita_krutikova`,
     },
