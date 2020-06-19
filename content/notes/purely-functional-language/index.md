@@ -5,7 +5,7 @@ category: note
 title: Purely functional language
 description: Definition of a purely functional language
 published: true
-tags: [functional, pure, definition]
+tags: [functional, languages]
 ---
 
 What is a "purely functional" programming language?

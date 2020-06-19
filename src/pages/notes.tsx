@@ -15,7 +15,6 @@ import { rhythm } from "../utils/typography"
 const StyledLink = styled(Link)`
   box-shadow: none;
   color: ${colors.pink};
-  /* border-bottom: 1px solid rgb(27, 179, 143); */
 `
 
 const StyledH3 = styled.h3`
@@ -64,18 +63,42 @@ const Notes = (props: Props) => {
     }
   `)
 
+  const [selectedTags, setSelectedTags] = React.useState<string[]>([])
+  const handleTagClick = (tagValue: string) => {
+    const newTags = selectedTags.includes(tagValue)
+      ? selectedTags.filter(tag => tag !== tagValue)
+      : [...selectedTags, tagValue]
+
+    setSelectedTags(newTags)
+  }
+
   const notes = data.allMarkdownRemark.edges || []
   const siteTitle = data.site.siteMetadata.title || ""
   const allTags = getUniqueTags(notes.map(note => note.node.fields.tags || []))
+
+  const isTagSelected = (tagValue: string) => selectedTags.includes(tagValue)
+
+  const visibleNotes =
+    selectedTags.length > 0
+      ? notes.filter(note =>
+          selectedTags.some(tag =>
+            (note.node.fields.tags || []).some(ownTag => ownTag === tag)
+          )
+        )
+      : notes
 
   return (
     <Layout variant="wide" location={props.location} title={siteTitle}>
       <SEO title="All notes" keywords={[`notes`, `code`]} />
       <StyledH3>/notes</StyledH3>
       <Container>
-        <TagsSection tags={allTags} />
+        <TagsSection
+          onClick={handleTagClick}
+          tags={allTags}
+          isSelected={isTagSelected}
+        />
         <div>
-          {notes.map(({ node: { fields, excerpt } }) => (
+          {visibleNotes.map(({ node: { fields, excerpt } }) => (
             <NoteListItem key={fields.slug}>
               <NoteTitle>
                 <StyledLink to={fields.slug}>{fields.title}</StyledLink>

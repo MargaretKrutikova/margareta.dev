@@ -11,6 +11,8 @@ import { rhythm } from "../utils/typography"
 
 type Props = {
   tags: Tag[]
+  onClick: (tagValue: string) => void
+  isSelected: (tagValue: string) => boolean
 }
 
 const TagsSectionWrapper = styled.section`
@@ -27,14 +29,16 @@ const TagsSectionWrapper = styled.section`
   }
 `
 
-const StyledTag = styled.div`
+const StyledTag = styled(({ ...props }) => <div {...props} />)`
   padding: 2px 4px;
   margin-bottom: 5px;
   border-radius: 3px;
   cursor: pointer;
   font-size: 0.95em;
   white-space: nowrap;
-  background-color: ${colors.beige};
+  background-color: ${(props: any) =>
+    props.selected ? colors.darkBeige : colors.beige};
+
   ${MOBILE_MEDIA_QUERY} {
     margin-right: 8px;
   }
@@ -55,7 +59,11 @@ export const TagsSection: React.FunctionComponent<Props> = props => {
   return (
     <TagsSectionWrapper>
       {props.tags.map(tag => (
-        <StyledTag key={tag.value}>
+        <StyledTag
+          key={tag.value}
+          onClick={() => props.onClick(tag.value)}
+          selected={props.isSelected(tag.value)}
+        >
           <StyledHashtag>#</StyledHashtag> {tag.value}{" "}
           <StyledCount>({tag.count})</StyledCount>
         </StyledTag>
