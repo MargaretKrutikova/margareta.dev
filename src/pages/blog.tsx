@@ -20,8 +20,9 @@ const BlogPostLink = styled(Link)`
 `
 
 const Title = styled.h3`
-  ${styledScale(1)}
+  ${styledScale(0.8)}
   margin-bottom: 0;
+  line-height: 1.3;
 `
 
 const Tag = styled.span`
