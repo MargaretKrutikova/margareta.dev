@@ -6,11 +6,7 @@ import {
 } from "typography-breakpoint-constants"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
-Wordpress2016.overrideThemeStyles = () => ({
-  "a.gatsby-resp-image-link": {
-    boxShadow: `none`,
-  },
-})
+import { colors } from "./theme"
 
 delete Wordpress2016.googleFonts
 
@@ -30,40 +26,74 @@ const typography = new Typography({
       styles: ["400", "400i", "600", "600i", "800", "800i", "900", "900i"],
     },
   ],
-  overrideStyles: (arg, options) => ({
-    ...Wordpress2016.overrideStyles(arg, options),
-    "h1,h2,h3,h4,h5,h6": {
-      marginTop: arg.rhythm(1),
-    },
-    "h2, h3, h4": {
-      marginBottom: arg.rhythm(0.8),
-    },
-    p: {
-      marginBottom: arg.rhythm(0.8),
-    },
-    "ul,ol": {
-      marginLeft: arg.rhythm(1),
-    },
-    strong: {
-      fontWeight: 800,
-    },
-    li: {
-      marginBottom: arg.rhythm(0.2),
-    },
-    [MIN_TABLET_MEDIA_QUERY]: {
+  overrideStyles: (arg, options) => {
+    const styles = Wordpress2016.overrideStyles(arg, options)
+
+    return {
+      ...styles,
+      a: {
+        ...styles.a,
+        textDecoration: "none",
+        backgroundSize: "100% 180%",
+        boxShadow: "none",
+        backgroundPositionY: "10%",
+        transition: "200ms background-position-y",
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, ${colors.pink} 50%)`,
+        color: "#404040",
+      },
+      "a:hover, a.active, a:focus": {
+        backgroundPositionY: "20%",
+      },
+      mark: {
+        backgroundColor: colors.pink,
+        borderRadius: "3px",
+      },
+      "h1,h2,h3,h4,h5,h6": {
+        marginTop: arg.rhythm(1),
+      },
+      "h2, h3, h4": {
+        marginBottom: arg.rhythm(0.7),
+      },
       p: {
-        marginBottom: arg.rhythm(0.8),
+        marginBottom: arg.rhythm(0.7),
       },
-    },
-    [MOBILE_MEDIA_QUERY]: {
+      "ul,ol": {
+        marginLeft: arg.rhythm(1),
+      },
+      strong: {
+        fontWeight: 800,
+      },
+      li: {
+        marginBottom: arg.rhythm(0.2),
+      },
       blockquote: {
-        marginLeft: arg.rhythm(-1 / 2),
+        ...styles.blockquote,
+        fontSize: arg.scale(1),
       },
-      html: {
-        fontSize: "110%",
+      [MIN_TABLET_MEDIA_QUERY]: {
+        p: {
+          marginBottom: arg.rhythm(0.8),
+        },
       },
-    },
-  }),
+      [MOBILE_MEDIA_QUERY]: {
+        blockquote: {
+          marginLeft: arg.rhythm(-1 / 2),
+        },
+        html: {
+          fontSize: "110%",
+        },
+      },
+    }
+  },
+})
+
+Wordpress2016.overrideThemeStyles = () => ({
+  "a.gatsby-resp-image-link": {
+    backgroundImage: `none`,
+  },
+  "a.anchor.before": {
+    backgroundImage: `none`,
+  },
 })
 
 // Hot reload typography in development.

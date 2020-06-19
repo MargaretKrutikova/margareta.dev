@@ -4,16 +4,29 @@ import styled from "styled-components"
 
 import { BlogIndexQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
+import { NavigationMenu } from "../components/navigation"
 import { SEO } from "../components/seo"
 import { NoUndefinedField } from "../types"
-import { rhythm } from "../utils/typography"
+import { colors } from "../utils/theme"
+import { styledScale } from "../utils/typography"
 
-const StyledLink = styled(Link)`
+const BlogPostLink = styled(Link)`
   box-shadow: none;
+  background-image: none;
+  color: ${colors.darkPink};
+  transition: 200ms color;
+  &:hover {
+    color: ${colors.pink};
+  }
 `
 
 const Title = styled.h3`
-  margin-bottom: ${rhythm(1 / 4)};
+  ${styledScale(1)}
+  margin-bottom: 0;
+`
+
+const Date = styled.small`
+  color: ${colors.darkGrey};
 `
 
 type Props = PageRendererProps
@@ -43,11 +56,8 @@ const BlogIndex = (props: Props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO
-        title="All posts"
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
-      <StyledLink to={"/notes"}>Notes</StyledLink>
+      <SEO title="All posts" keywords={[`blog`]} />
+      <NavigationMenu />
       {posts.map(({ node }) => {
         const { fields, excerpt } = node
 
@@ -57,11 +67,9 @@ const BlogIndex = (props: Props) => {
         return (
           <div key={slug}>
             <Title>
-              <StyledLink to={slug}>{title}</StyledLink>
+              <BlogPostLink to={slug}>{title}</BlogPostLink>
             </Title>
-            <small>
-              {fields.date}, <strong>{fields.category}</strong>
-            </small>
+            <Date>{fields.date}</Date>
             <p
               dangerouslySetInnerHTML={{
                 __html: fields.description || excerpt,
