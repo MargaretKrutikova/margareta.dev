@@ -1,11 +1,11 @@
 ---
-path: learn clojurescript #1
+path: clojurescript-start-template
 date: 2020-06-18T23:40:00.831Z
-title: Learn ClojureScript - unsuccessful start
+title: ClojureScript start template
 category: note
-tags: [clojurescript, functional, fail]
+tags: [clojurescript, functional]
 published: true
-description: First encounter with ClojureScript that didn't go well
+description: Start a ClojureScript project with lein and figwheel
 ---
 
 ## Smooth start
