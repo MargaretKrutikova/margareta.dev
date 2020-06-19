@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
 import { rhythm, styledScale } from "../utils/typography"
+import { NavigationMenu } from "./navigation"
 
 type Variant = "default" | "wide"
 
@@ -28,18 +29,25 @@ const StyledLink = styled(Link)`
   box-shadow: none;
   color: inherit;
   text-decoration: none;
+  background-image: none;
+`
+
+const Header = styled.header`
+  max-width: ${rhythm(22)};
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(26)};
+  max-width: ${rhythm(22)};
   padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
   ${MOBILE_MEDIA_QUERY} {
     padding: ${`${rhythm(1.5)} ${rhythm(1 / 2)}`};
   }
   max-width: ${(props: any) =>
-    props.variant === "wide" ? rhythm(28) : rhythm(22)};
+    props.variant === "wide" ? rhythm(22) : rhythm(22)};
 `
 
 const Footer = styled.footer`
@@ -54,11 +62,12 @@ export const Layout = (props: Props) => {
 
   return (
     <Content variant={props.variant}>
-      <header>
+      <Header>
         <HeaderTitle>
           <StyledLink to={`/`}>{title}</StyledLink>
         </HeaderTitle>
-      </header>
+        <NavigationMenu />
+      </Header>
       <main>{children}</main>
       {/* <Footer>
         © {new Date().getFullYear()}, Built with
