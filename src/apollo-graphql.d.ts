@@ -125,6 +125,7 @@ export interface BlogIndexQuery_allMarkdownRemark_edges_node_fields {
   title: string | null;
   description: string | null;
   category: string | null;
+  tags: (string | null)[] | null;
 }
 
 export interface BlogIndexQuery_allMarkdownRemark_edges_node {
@@ -176,6 +177,7 @@ export interface NotesPageQuery_allMarkdownRemark_edges_node_fields {
   title: string | null;
   description: string | null;
   category: string | null;
+  tags: (string | null)[] | null;
 }
 
 export interface NotesPageQuery_allMarkdownRemark_edges_node {
@@ -197,38 +199,6 @@ export interface NotesPageQuery_allMarkdownRemark {
 export interface NotesPageQuery {
   site: NotesPageQuery_site | null;
   allMarkdownRemark: NotesPageQuery_allMarkdownRemark;
-}
-
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: TilPageQuery
-// ====================================================
-
-export interface TilPageQuery_site_siteMetadata {
-  __typename: "SiteSiteMetadata";
-  title: string | null;
-  author: string | null;
-  description: string | null;
-}
-
-export interface TilPageQuery_site {
-  __typename: "Site";
-  siteMetadata: TilPageQuery_site_siteMetadata | null;
-}
-
-export interface TilPageQuery_markdownRemark {
-  __typename: "MarkdownRemark";
-  id: string;
-  html: string | null;
-}
-
-export interface TilPageQuery {
-  site: TilPageQuery_site | null;
-  markdownRemark: TilPageQuery_markdownRemark | null;
 }
 
 /* tslint:disable */
@@ -318,6 +288,42 @@ export interface NoteBySlug {
 }
 
 export interface NoteBySlugVariables {
+  slug: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: TilPageQuery
+// ====================================================
+
+export interface TilPageQuery_site_siteMetadata {
+  __typename: "SiteSiteMetadata";
+  title: string | null;
+  author: string | null;
+  description: string | null;
+}
+
+export interface TilPageQuery_site {
+  __typename: "Site";
+  siteMetadata: TilPageQuery_site_siteMetadata | null;
+}
+
+export interface TilPageQuery_markdownRemark {
+  __typename: "MarkdownRemark";
+  id: string;
+  html: string | null;
+}
+
+export interface TilPageQuery {
+  site: TilPageQuery_site | null;
+  markdownRemark: TilPageQuery_markdownRemark | null;
+}
+
+export interface TilPageQueryVariables {
   slug: string;
 }
 
@@ -806,6 +812,7 @@ export interface MarkdownRemarksShortInfo_edges_node_fields {
   title: string | null;
   description: string | null;
   category: string | null;
+  tags: (string | null)[] | null;
 }
 
 export interface MarkdownRemarksShortInfo_edges_node {

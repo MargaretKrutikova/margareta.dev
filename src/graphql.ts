@@ -17,10 +17,11 @@ export const markdownRemarksShortInfo = graphql`
         excerpt
         fields {
           slug
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "MM-DD-YYYY")
           title
           description
           category
+          tags
         }
       }
     }
