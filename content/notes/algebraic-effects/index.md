@@ -3,7 +3,7 @@ path: Algebraic effects
 date: 2020-05-24T18:40:00.831Z
 title: Algebraic effects
 category: note
-tags: [ocaml, functional, async, effects]
+tags: [ocaml, functional]
 published: true
 description: Notes from the talk on algebraic effects at Reason Bangalore meetup
 ---
