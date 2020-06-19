@@ -26,6 +26,7 @@ const TagsSectionWrapper = styled.section`
     flex-direction: row;
     flex-wrap: wrap;
     margin-right: 0;
+    margin-bottom: ${rhythm(0.7)};
   }
 `
 

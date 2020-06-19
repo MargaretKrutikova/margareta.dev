@@ -7,7 +7,7 @@ import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { NoUndefinedField } from "../types"
 import { colors } from "../utils/theme"
-import { styledScale } from "../utils/typography"
+import { rhythm, styledScale } from "../utils/typography"
 
 const BlogPostLink = styled(Link)`
   box-shadow: none;
@@ -20,7 +20,7 @@ const BlogPostLink = styled(Link)`
 `
 
 const Title = styled.h3`
-  ${styledScale(0.8)}
+  ${styledScale(0.6)}
   margin-bottom: 0;
   line-height: 1.3;
 `
@@ -36,6 +36,12 @@ const Tag = styled.span`
 
 const Date = styled.small`
   color: ${colors.darkGrey};
+`
+
+const Description = styled.p`
+  font-size: 0.9em;
+  line-height: 1.3;
+  margin-bottom: ${rhythm(1 / 3)};
 `
 
 type Props = PageRendererProps
@@ -84,7 +90,7 @@ const BlogIndex = (props: Props) => {
                 <Tag key={tag}>{tag}</Tag>
               ))}
             </span>
-            <p
+            <Description
               dangerouslySetInnerHTML={{
                 __html: fields.description || excerpt,
               }}

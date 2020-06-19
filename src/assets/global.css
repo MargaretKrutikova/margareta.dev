@@ -4,6 +4,11 @@
   margin-right: -0.8rem;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
+  background-image: none;
+}
+
+a.gatsby-resp-image-link {
+  background-image: none;
 }
 
 @media only screen and (max-width: 480px) {
