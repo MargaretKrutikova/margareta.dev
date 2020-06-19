@@ -6,6 +6,7 @@ import { rhythm } from "../utils/typography"
 
 const Wrapper = styled.nav`
   display: flex;
+  margin-bottom: ${rhythm(1.4)};
 `
 
 const StyledLink = styled.span`
@@ -16,13 +17,18 @@ export const NavigationMenu: React.FunctionComponent<{}> = () => {
   return (
     <Wrapper>
       <StyledLink>
-        <Link activeClassName="active" to="/">
+        <Link activeClassName="active" partiallyActive={true} to="/blog/">
           /blog
         </Link>
       </StyledLink>
       <StyledLink>
-        <Link activeClassName="active" to="/notes/">
+        <Link activeClassName="active" partiallyActive={true} to="/notes/">
           /notes
+        </Link>
+      </StyledLink>
+      <StyledLink>
+        <Link activeClassName="active" partiallyActive={true} to="/til/">
+          /today-i-learned
         </Link>
       </StyledLink>
     </Wrapper>

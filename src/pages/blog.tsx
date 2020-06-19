@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { BlogIndexQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
-import { NavigationMenu } from "../components/navigation"
 import { SEO } from "../components/seo"
 import { NoUndefinedField } from "../types"
 import { colors } from "../utils/theme"
@@ -66,7 +65,6 @@ const BlogIndex = (props: Props) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="All posts" keywords={[`blog`]} />
-      <NavigationMenu />
       {posts.map(({ node }) => {
         const { fields, excerpt } = node
 

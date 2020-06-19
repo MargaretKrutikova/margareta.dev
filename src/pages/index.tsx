@@ -3,7 +3,6 @@ import React from "react"
 
 import { BlogIndexQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
-import { NavigationMenu } from "../components/navigation"
 import { SEO } from "../components/seo"
 import { NoUndefinedField } from "../types"
 
@@ -23,7 +22,6 @@ const BlogIndex = (props: Props) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="margareta.dev" keywords={[`tech`]} />
-      <NavigationMenu />
     </Layout>
   )
 }

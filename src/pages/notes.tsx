@@ -5,7 +5,6 @@ import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 
 import { NotesPageQuery } from "../apollo-graphql"
 import { Layout } from "../components/layout"
-import { NavigationMenu } from "../components/navigation"
 import { SEO } from "../components/seo"
 import { TagsSection } from "../components/tagsSection"
 import { NoUndefinedField } from "../types"
@@ -90,7 +89,6 @@ const Notes = (props: Props) => {
   return (
     <Layout variant="wide" location={props.location} title={siteTitle}>
       <SEO title="All notes" keywords={[`notes`, `code`]} />
-      <NavigationMenu />
       <Container>
         <TagsSection
           onClick={handleTagClick}
