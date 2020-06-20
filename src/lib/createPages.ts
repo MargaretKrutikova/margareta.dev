@@ -35,7 +35,12 @@ export const createPages: GatsbyCreatePages = async ({
       }
 
       postsQuery: allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "blog-post" } } }
+        filter: {
+          frontmatter: {
+            category: { eq: "blog-post" }
+            published: { ne: false }
+          }
+        }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
