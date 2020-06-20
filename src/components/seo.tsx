@@ -86,6 +86,11 @@ export const SEO = (props: Props) => {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <meta
+        name="google-site-verification"
+        content="VwIi-8suCEx6TvN1s-Nzdr2Ah9Y_r4Ctg_zqbLqC5yk"
+      />
+    </Helmet>
   )
 }
