@@ -43,6 +43,9 @@ const Content = styled.div`
   max-width: ${rhythm(24)};
   padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
   ${MOBILE_MEDIA_QUERY} {
+    max-width: ${rhythm(22)};
+  }
+  ${MOBILE_MEDIA_QUERY} {
     padding: ${`${rhythm(1.5)} ${rhythm(1 / 2)}`};
   }
 `
