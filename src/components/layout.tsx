@@ -21,7 +21,6 @@ const StyledH1 = styled.h1`
 `
 
 const StyledH3 = styled.h3`
-  font-family: Montserrat, sans-serif;
   margin-top: 0;
 `
 

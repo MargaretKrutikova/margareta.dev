@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog-typescript",
+  "name": "my-internet-identity",
   "private": true,
-  "description": "A starter gatsby blog using typescript",
+  "description": "A thing for blogging, collecting notes and other things worth writing down",
   "version": "0.1.0",
-  "author": "Greg Perlman <gperlman27@gmail.com>",
+  "author": "Margarita Krutikova <margaretkru@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/MargaretKrutikova/margareta.dev/issues"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.9",
@@ -46,8 +46,6 @@
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.0",
     "ts-node": "^8.1.0",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.54",
     "typography": "^0.16.19",
     "typography-breakpoint-constants": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19"
