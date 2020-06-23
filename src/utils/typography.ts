@@ -73,6 +73,15 @@ const typography = new Typography({
       li: {
         marginBottom: arg.rhythm(0.2),
       },
+      "li p": {
+        margin: 0,
+      },
+      "li > ul": {
+        marginTop: arg.rhythm(0.2),
+      },
+      "ul ul": {
+        listStyleType: "circle",
+      },
       blockquote: {
         ...styles.blockquote,
         fontSize: arg.scale(1),
