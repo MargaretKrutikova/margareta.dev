@@ -15,7 +15,7 @@ const typography = new Typography({
   baseFontSize: "20px",
   baseLineHeight: 1.6,
   bodyFontFamily: ["Nunito Sans", "sans-serif"],
-  headerFontFamily: ["Nunito Sans", "sans-serif"],
+  headerFontFamily: ["Quicksand", "sans-serif"],
   scaleRatio: 1.8,
   headerWeight: 600,
   bodyWeight: 400,
@@ -24,6 +24,10 @@ const typography = new Typography({
     {
       name: "Nunito+Sans",
       styles: ["400", "400i", "600", "600i", "800", "800i", "900", "900i"],
+    },
+    {
+      name: "Quicksand",
+      styles: ["400", "400i", "600", "600i"],
     },
   ],
   overrideStyles: (arg, options) => {
@@ -48,6 +52,9 @@ const typography = new Typography({
         backgroundColor: colors.pink,
         borderRadius: "3px",
       },
+      h1: {
+        fontFamily: "Quicksand",
+      },
       "h1,h2,h3,h4,h5,h6": {
         marginTop: arg.rhythm(1),
       },
@@ -55,7 +62,7 @@ const typography = new Typography({
         marginBottom: arg.rhythm(0.7),
       },
       p: {
-        marginBottom: arg.rhythm(0.7),
+        marginBottom: arg.rhythm(0.6),
       },
       "ul,ol": {
         marginLeft: arg.rhythm(1),
@@ -69,11 +76,6 @@ const typography = new Typography({
       blockquote: {
         ...styles.blockquote,
         fontSize: arg.scale(1),
-      },
-      [MIN_TABLET_MEDIA_QUERY]: {
-        p: {
-          marginBottom: arg.rhythm(0.8),
-        },
       },
       [MOBILE_MEDIA_QUERY]: {
         blockquote: {
