@@ -27,6 +27,6 @@ let getByIdsAsync (ids : int seq) (getById : int -> Async<'a>) : Async<'a list>=
 
 ## Quick reference:
 
-- `AsyncSeq.ofSeq : seq<'a> -> AsyncSeq<'a>` - create an asynchronous sequence
-- `AsyncSeq.mapAsync : ('a -> Async<'b>) -> AsyncSeq<'a> -> AsyncSeq<'b>` - map each element to `Async`
-- `AsyncSeq.toListAsync : AsyncSeq<'a> -> Async<'a list>` - creates an async computation which iterates the `AsyncSeq` and collects the output into a list
+- `AsyncSeq.ofSeq` of `seq<'a> -> AsyncSeq<'a>`, create an asynchronous sequence
+- `AsyncSeq.mapAsync` of <code class="language-text" style="white-space:pre-wrap">('a -> Async<'b>) -> AsyncSeq<'a> -> AsyncSeq<'b></code>, maps each element to `Async`
+- `AsyncSeq.toListAsync` of `AsyncSeq<'a> -> Async<'a list>`, creates an async computation which iterates the `AsyncSeq` and collects the output
