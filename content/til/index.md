@@ -6,7 +6,17 @@ category: til
 description: what I learn every day
 ---
 
-## TIL #6
+## TIL #8
+
+<small> #git, </small><small>2020-06-26</small>
+
+Get the name of the current branch in `git`:
+
+```
+git rev-parse --abbrev-ref HEAD
+```
+
+## TIL #7
 
 <small> #dev-ops, #docker, </small><small>2020-06-22</small>
 
