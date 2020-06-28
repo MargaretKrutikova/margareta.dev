@@ -25,4 +25,4 @@ Types are anti-modular - it is a contract between things, no types provides flex
 
 Efficiency (how well does your engine work) vs effectiveness. Developers focus on efficiency and we can get lost without going into the right direction. Type systems ensures correctness but doesn’t help to go in the right direction (Rich Hickey, `clojure`),
 
-> Programming is not a mathematical thing - it is a human thing! </br>(c) Scott Wlaschin
+> Programming is not a mathematical thing - it is a human thing! <br />(c) Scott Wlaschin
