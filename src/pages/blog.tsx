@@ -38,6 +38,8 @@ const Date = styled.small`
   color: ${colors.darkGrey};
 `
 
+const TimeToRead = styled.span``
+
 const Description = styled.p`
   font-size: 0.9em;
   line-height: 1.3;
@@ -73,7 +75,7 @@ const BlogIndex = (props: Props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO title="All posts" keywords={[`blog`]} />
       {posts.map(({ node }) => {
-        const { fields, excerpt } = node
+        const { fields, excerpt, timeToRead } = node
 
         const slug = fields.slug
         const title = fields.title || fields.slug
@@ -85,10 +87,15 @@ const BlogIndex = (props: Props) => {
               <BlogPostLink to={slug}>{title}</BlogPostLink>
             </Title>
             <span>
-              <Date>{fields.date}, </Date>
-              {tags.map(tag => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
+              <Date>
+                {fields.date}
+                <TimeToRead>{` (${timeToRead} mins), `}</TimeToRead>
+              </Date>
+              <span>
+                {tags.map(tag => (
+                  <Tag key={tag}>{tag}</Tag>
+                ))}
+              </span>
             </span>
             <Description
               dangerouslySetInnerHTML={{
