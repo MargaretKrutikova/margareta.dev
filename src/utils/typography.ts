@@ -1,9 +1,6 @@
 import { CSSObject } from "styled-components"
 import Typography from "typography"
-import {
-  MIN_TABLET_MEDIA_QUERY,
-  MOBILE_MEDIA_QUERY
-} from "typography-breakpoint-constants"
+import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
 import { colors } from "./theme"

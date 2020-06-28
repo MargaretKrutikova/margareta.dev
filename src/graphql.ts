@@ -15,6 +15,7 @@ export const markdownRemarksShortInfo = graphql`
     edges {
       node {
         excerpt
+        timeToRead
         fields {
           slug
           date(formatString: "MM-DD-YYYY")

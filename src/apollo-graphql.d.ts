@@ -131,6 +131,7 @@ export interface BlogIndexQuery_allMarkdownRemark_edges_node_fields {
 export interface BlogIndexQuery_allMarkdownRemark_edges_node {
   __typename: "MarkdownRemark";
   excerpt: string | null;
+  timeToRead: number | null;
   fields: BlogIndexQuery_allMarkdownRemark_edges_node_fields | null;
 }
 
@@ -147,6 +148,31 @@ export interface BlogIndexQuery_allMarkdownRemark {
 export interface BlogIndexQuery {
   site: BlogIndexQuery_site | null;
   allMarkdownRemark: BlogIndexQuery_allMarkdownRemark;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: StartPageQuery
+// ====================================================
+
+export interface StartPageQuery_site_siteMetadata {
+  __typename: "SiteSiteMetadata";
+  title: string | null;
+  author: string | null;
+  description: string | null;
+}
+
+export interface StartPageQuery_site {
+  __typename: "Site";
+  siteMetadata: StartPageQuery_site_siteMetadata | null;
+}
+
+export interface StartPageQuery {
+  site: StartPageQuery_site | null;
 }
 
 /* tslint:disable */
@@ -183,6 +209,7 @@ export interface NotesPageQuery_allMarkdownRemark_edges_node_fields {
 export interface NotesPageQuery_allMarkdownRemark_edges_node {
   __typename: "MarkdownRemark";
   excerpt: string | null;
+  timeToRead: number | null;
   fields: NotesPageQuery_allMarkdownRemark_edges_node_fields | null;
 }
 
@@ -818,6 +845,7 @@ export interface MarkdownRemarksShortInfo_edges_node_fields {
 export interface MarkdownRemarksShortInfo_edges_node {
   __typename: "MarkdownRemark";
   excerpt: string | null;
+  timeToRead: number | null;
   fields: MarkdownRemarksShortInfo_edges_node_fields | null;
 }
 
