@@ -15,7 +15,7 @@ If you want to change the logic, you just build another piece without changing t
 
 Having a lot of small components is a good idea! Micro services, pipelines etc
 
-FP forces you to do interfaces - every function parameter defines an interface, the type is the interface itself, see [unit testing in FP vs OOP](http://localhost:8002/notes/architecture/functional-architectures/#unit-testing-and-tdd).
+FP forces you to do interfaces - every function parameter defines an interface, the type is the interface itself, see [unit testing in FP vs OOP](/notes/architecture/functional-architectures/#unit-testing-and-tdd).
 
 ## Arguments against statically typed languages
 
