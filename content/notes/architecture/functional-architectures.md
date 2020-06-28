@@ -68,8 +68,7 @@ In a unit test you just pass pure functions as dependencies and the function bei
 
 Tests a unit in **isolation** from its dependencies.
 
-> Test driven development leads to test induced damage. </br>
-> (c) David Heinemeir Hansson
+> Test driven development leads to test induced damage. <br />(c) David Heinemeir Hansson
 
 The original blog article [test-induced design damage, 2014](https://dhh.dk/2014/test-induced-design-damage.html). This is applicable for OOP, since writing OOP code for testability requires a lot of noise just for the sake of being testable (all the noise includes interfaces for all dependencies with DI).
 
