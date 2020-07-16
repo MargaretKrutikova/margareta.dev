@@ -60,6 +60,7 @@ const BlogIndex = (props: Props) => {
             category: { eq: "blog-post" }
             published: { ne: false }
           }
+          fileAbsolutePath: { glob: "**/blog/**/*.*" }
         }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
