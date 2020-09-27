@@ -6,6 +6,24 @@ category: til
 description: what I learn every day
 ---
 
+## TIL #9
+
+<small> #git, </small><small>2020-09-25</small>
+
+Difference between `HEAD~` and `HEAD^`.
+`branch-name~` is used to go back a number of commits from the tip of the branch, while `branch-name^` is used to choose a parent of the tip of the branch, which only makes sense if there was a merge and the commit has several parents.
+
+Examples:
+
+- `HEAD~3` (go 3 commits back from the current commit) is the same as `HEAD^^^` (parent of parent of parent),
+- `HEAD^2` means the second parent of the current commit, which is rarely needed,
+- `HEAD~` is the same as `HEAD~1` and `HEAD^` is the same as `HEAD^1`.
+- undo the last commit:
+
+```
+git reset HEAD~
+```
+
 ## TIL #8
 
 <small> #git, </small><small>2020-06-26</small>
