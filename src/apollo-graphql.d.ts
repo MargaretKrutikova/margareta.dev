@@ -279,6 +279,42 @@ export interface BlogPostBySlugVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: BooksPageQuery
+// ====================================================
+
+export interface BooksPageQuery_site_siteMetadata {
+  __typename: "SiteSiteMetadata";
+  title: string | null;
+  author: string | null;
+  description: string | null;
+}
+
+export interface BooksPageQuery_site {
+  __typename: "Site";
+  siteMetadata: BooksPageQuery_site_siteMetadata | null;
+}
+
+export interface BooksPageQuery_markdownRemark {
+  __typename: "MarkdownRemark";
+  id: string;
+  html: string | null;
+}
+
+export interface BooksPageQuery {
+  site: BooksPageQuery_site | null;
+  markdownRemark: BooksPageQuery_markdownRemark | null;
+}
+
+export interface BooksPageQueryVariables {
+  slug: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: NoteBySlug
 // ====================================================
 
@@ -893,6 +929,21 @@ export interface MarkdownRemarkInfo {
 // ====================================================
 
 export interface TilInfo {
+  __typename: "MarkdownRemark";
+  id: string;
+  html: string | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL fragment: BooksInfo
+// ====================================================
+
+export interface BooksInfo {
   __typename: "MarkdownRemark";
   id: string;
   html: string | null;

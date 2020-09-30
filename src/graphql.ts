@@ -48,3 +48,10 @@ export const tilInfo = graphql`
     html
   }
 `
+
+export const booksInfo = graphql`
+  fragment BooksInfo on MarkdownRemark {
+    id
+    html
+  }
+`
