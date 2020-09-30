@@ -1,13 +1,13 @@
 ---
 title: On Isaac Asimov's "Nightfall"
-description: A short summary of the brilliant novel "Nightfall" by Isaac Asimov including my own contemplations and interpretation
+description: A short summary of the brilliant novel "Nightfall" by Isaac Asimov including my own analysis and contemplations
 published: true
 tags: [books, sci-fi, space]
 date: 2020-09-30T12:16:21.000Z
 category: blog-post
 ---
 
-What follows is a summary of the novel with my own words, including the most outstanding (according to me) citations from the novel. In the last section comes my own thoughts and contemplations influenced by the brilliancy and ingenuity of the novel.
+What follows is a summary of the novel with my own words, including the most outstanding (according to me) citations in the original. In the [last section](/blog/asimov-nightfall/#the-parallels) comes my own analysis and contemplations influenced by the brilliancy and ingenuity of the novel.
 
 ---
 
@@ -76,13 +76,20 @@ And his mind disappears in the cloud of insanity together with the whole generat
 
 ## The parallels
 
-We also once believed that the universe consists of just our own galaxy.
-In 1920, in The Great Debate over the scale of the universe, Harlow Shapley believed the universe was comprised of our own galaxy, and "our galaxy is probably not more than 30,000 light-years in diameter, and perhaps 5,000 light-years in thickness" (https://apod.nasa.gov/htmltest/gifcity/cs_nrc.html).
+Asimov draws a number of parallels with our own development of astronomical knowledge and the strange planet. The ideas can be traced back to the ancient times thousands years from now, with the [records](https://edition.cnn.com/2017/07/25/us/history-solar-eclipse/index.html) connecting fear with eclipses.
 
-That's when Edwin Hubble went on to discover other galaxies besides our own in 1923, setting off a new astronomical era.
+Next, <b>the Universal Theory of Gravitation</b> and the erroneous prediction of the planet's orbit, followed by the theory of a moon orbiting the planet and causing the disturbance.
 
-A genuinely witty and slightly humoristic story making parallels with the astronomic observations and motions of the Earths and Moons motions
+Guess what? A similar story happened on our occasionally-dark planet when Newton came up with the exact same law of universal gravitation described in the novel. Centuries later, it was observed that Mercury's orbit conflicted with this law, forcing scientists to revise their understanding of gravity. Einstein's general relativity came to the rescue this time.
 
-Making parallels with the great scientific discoveries that happen when the theoretical calculations doesn't correspond to the experimental outcomes like the cosmological constant
+We also once believed that the universe consists of just our own galaxy. In 1920, in <mark>The Great Debate</mark> over the scale of the universe, Harlow Shapley [argued](https://apod.nasa.gov/htmltest/gifcity/cs_nrc.html) that the universe was comprised only of our own galaxy. Similar to the scientists of Asimov's planet, who believed there were just six suns in the whole universe.
 
-Introducing some scientific notions and theories in a smart and easy to understand way the story is simply genius.
+Then Edwin Hubble went on to discover other galaxies besides our own in 1923, setting off a new astronomical era. As of now, the observations and calculations suggest billions or a couple of trillions trillions galaxies, with the universe being around 93 billion light years in diameter (a billion = `1 000 000 000 000`).
+
+## The big question
+
+"Nightfall" is a genuinely deep and subtly humorous story, making parallels with the astronomic development on Earth backed up by a couple of scientific and astronomical concepts to make the reader really believe in the story. It is simply genius.
+
+As the people of the never-dark planet realise their insignificance in the universe with the discovery of Stars, could it be that we, the people of Earth, haven't yet discovered our "Stars" and are yet to uncover the real universe?
+
+Could the billions of galaxies, stars, planets and multiverses, comprise the six suns of what there <b>actually</b> is there?
