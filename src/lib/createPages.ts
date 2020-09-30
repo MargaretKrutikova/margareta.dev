@@ -34,6 +34,14 @@ export const createPages: GatsbyCreatePages = async ({
         }
       }
 
+      booksQuery: markdownRemark(fields: { category: { eq: "books" } }) {
+        id
+        fields {
+          title
+          slug
+        }
+      }
+
       postsQuery: allMarkdownRemark(
         filter: {
           frontmatter: {
@@ -106,6 +114,20 @@ export const createPages: GatsbyCreatePages = async ({
         next: null,
         previous: null,
         slug: tilSlug,
+      },
+    })
+  }
+
+  //  Books
+  if (data.booksQuery && data.booksQuery.fields) {
+    const booksSlug = data.booksQuery.fields.slug
+    createPage({
+      path: booksSlug,
+      component: path.resolve(`src/templates/books.tsx`),
+      context: {
+        next: null,
+        previous: null,
+        slug: booksSlug,
       },
     })
   }

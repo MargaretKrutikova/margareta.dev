@@ -62,4 +62,7 @@ export interface CreatePagesQuery {
   tilQuery: {
     fields: MarkdownFields | null
   }
+  booksQuery: {
+    fields: MarkdownFields | null
+  }
 }
