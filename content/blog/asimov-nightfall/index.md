@@ -41,40 +41,45 @@ One of the most prominent astronomers of the time is speculating about the unive
 
 Such a genius parallel with the development of astronomical knowledge of the earthlings! He continues,
 
-> ...really far off - maybe as much as four light years or even more! Two dozens suns in a universe eight light years across. Wow! That would shrink our world into insignificance.
+> There just isn't any place in the universe you could put a million suns - unless they touch one another.
 
-The astronomer is really skeptical of his own words, finishing with the words:
+The debate continues slightly further giving fruits to even "crazier" thought experiments about a possible universe:
 
-> There just isn't any place in the universe you could put a million suns - unless they touch one another". What a fascinating thought!
+> Supposing you had a universe in which there was a planet with only one sun... there's the catch that life would be impossible on such a planet. It wouldn't get enough heat and light, and if it rotated there would be total Darkness half of each day.
 
-The debate continues even further giving fruits to even "crazier" thought experiments:
-"Supposing you had a universe in which there was a planet with only one sun... there's the catch that life would be impossible on such a planet. It wouldn't get enough heat and light, and if it rotated there would be total Darkness half if each day."
+What a coincidence that this is exactly what happens here on Earth.
 
 ## The Stars
 
-As the eclipse is approaching its "totality", the scientists are gradually going made.
-By now, through the vivid depiction of the fear of darkness, the reader has unintentionally become a true inhabitant of the planet, and has persuaded himself that he is, too, afraid of the Darkness and the Stars. Meanwhile, the last sun, Beta, is disappearing in the sky.
-"He turned his eyes toward the blood-curdling blackness of the window... Through it shone the Stars!"
+As the eclipse is approaching its <mark>totality</mark>, the scientists are gradually going made.
 
-"Thirty thousand mighty suns shone down in a soul/searing splendor that was more frighteningly cold in its awful indifference than the bitter wind that shivered across the cold, horribly bleak world."
+By now, through the vivid depiction of the fear of darkness, the reader has unintentionally become a true inhabitant of the planet, and has persuaded himself that he is, too, afraid of the Darkness and the Stars.
 
-A shiver runs through the whole body, just imagine would it would feel like to experience seeing the Stars for the very first time in life! What an intricate sensation that would be.
+Meanwhile, the last sun, Beta, is disappearing in the sky.
 
-Comparing the eclipse with the fear of being placed in an enclosed area, just that it is the universe this time:
+> He turned his eyes toward the blood-curdling blackness of the window... Through it shone the Stars!
+> Thirty thousand mighty suns shone down in a soul-searing splendor ..."
 
-"The bright walls of the universe were shattered and their awful black fragments were falling down to crush and squeeze and obliterate him".
+A shiver runs through the whole body, imagining what it would feel like seeing the Stars for the very first time in life! What an intricate sensation that would be.
 
-And at last, the leading scientist that managed to keep a slight glimpse of sanity, realizing how incorrect their predictions of the universe were, exclaims:
-"Starts - all the Stars we didn't know at all. We thought six starts in a universe is something the Stars didn't notice is Darkness forever ... and we didn't know we couldn't know..." And his mind disappears in the clouds of insanity.
+Comparing the eclipse with the fear of being placed in an enclosed area, which is the universe this time:
+
+> The bright walls of the universe were shattered and their awful black fragments were falling down to crush and squeeze and obliterate him.
+
+And at last, the leading scientist that managed to keep a slight glimpse of sanity, realizing how incorrect their predictions of the universe were, murmurs:
+
+> Starts - all the Stars we didn't know at all. We thought six starts in a universe is something the Stars didn't notice is Darkness forever ... and we didn't know we couldn't know...
+
+And his mind disappears in the cloud of insanity together with the whole generation of minds, ending this cycle too.
 
 ---
+
+## The parallels
 
 We also once believed that the universe consists of just our own galaxy.
 In 1920, in The Great Debate over the scale of the universe, Harlow Shapley believed the universe was comprised of our own galaxy, and "our galaxy is probably not more than 30,000 light-years in diameter, and perhaps 5,000 light-years in thickness" (https://apod.nasa.gov/htmltest/gifcity/cs_nrc.html).
 
 That's when Edwin Hubble went on to discover other galaxies besides our own in 1923, setting off a new astronomical era.
-
----
 
 A genuinely witty and slightly humoristic story making parallels with the astronomic observations and motions of the Earths and Moons motions
 
