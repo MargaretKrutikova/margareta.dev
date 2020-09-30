@@ -23,7 +23,7 @@ The astronomers are oblivious of the existence of other celestial bodies and the
 
 The inhabitants of the planet go insane as soon as the darkness falls on them and burn down everything around them including themselves, as at the time, it is the only way to generate light. And the next cycle begins.
 
-> ...things called Starts appeared, which robbed men of their souls... so that they destroyed the civilization they themselves had built up".
+> ...things called Stars appeared, which robbed men of their souls... so that they destroyed the civilization they themselves had built up".
 
 ## The observations
 
@@ -31,7 +31,7 @@ The scientists of the planet continue their astronomical observations and have j
 
 To explain the discrepancy, they have made a crazy assumption that there is another body rotating around the planet (<cite>"What a screwy idea!"</cite>) and predict that at some point it might appear in the way of a sun. In other words, they predict an eclipse half a day long.
 
-The eclipse would destroy their race making everyone go insane because of the <mark>Darkness</mark> and the <mark>Starts</mark> that will appear in the sky, which has wiped out their numerous civilizations in the past. The next such celestial event is about to do it again, in just a couple of hours.
+The eclipse would destroy their race making everyone go insane because of the <mark>Darkness</mark> and the <mark>Stars</mark> that will appear in the sky, which has wiped out their numerous civilizations in the past. The next such celestial event is about to do it again, in just a couple of hours.
 
 ## The astronomers' debate
 
@@ -68,7 +68,7 @@ Comparing the eclipse with the fear of being placed in an enclosed area, which i
 
 And at last, the leading scientist that managed to keep a slight glimpse of sanity, realizing how incorrect their predictions of the universe were, murmurs:
 
-> Starts - all the Stars we didn't know at all. We thought six starts in a universe is something the Stars didn't notice is Darkness forever ... and we didn't know we couldn't know...
+> Stars - all the Stars we didn't know at all. We thought six stars in a universe is something the Stars didn't notice is Darkness forever ... and we didn't know we couldn't know...
 
 And his mind disappears in the cloud of insanity together with the whole generation of minds, ending this cycle too.
 
