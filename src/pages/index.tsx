@@ -51,8 +51,9 @@ const StartPage = (props: Props) => {
       <p>
         My name is Margarita, but <strike>margarita.dev</strike> was not
         available, so I changed one letter and it became{" "}
-        <Link to="/">margareta.dev</Link>. Here I post, write notes and document
-        small things I learn every day. Links to my internet life:
+        <Link to="/">margareta.dev</Link>. Here I post, write notes, document
+        small things I learn every day, and keep track of the books I read.
+        Links to my internet life:
       </p>
       <Wrapper>
         <StyledLink href="https://github.com/MargaretKrutikova" target="_blank">
