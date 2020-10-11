@@ -52,3 +52,8 @@ a.anchor.before {
   box-shadow: none;
   background-image: none;
 }
+
+small {
+  line-height: 1.4rem;
+  display: inline-block;
+}
