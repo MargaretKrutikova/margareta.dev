@@ -29,7 +29,7 @@ description: what I have read or want to read
 #### Science fiction
 
 - Ray Bradbury, <b>The Martian Chronicles</b>. 2020 October (audio)
-  </br ><small>Best stories: The Earth Men (The second Expedition), The Third Expedition, Night Meeting, Usher II, The Martian (a martian trapped in people's mind to becomes someone they have lost)</small>
+  <small>Best stories: The Earth Men (The second Expedition), The Third Expedition, Night Meeting, Usher II, The Martian (a martian trapped in people's mind to becomes someone they have lost)</small>
 - Isaac Asimov, stories. 2020 September - October
 
   - The Martian Way
