@@ -14,12 +14,30 @@ description: what I have read or want to read
   - [ ] The Futurological congress
   - [ ] The cyberiad
 
+### Reading
+
+- Jim Al-Khalili, Quantum - A Guide for the Perplexed
+- Brian Cox, Andrew Cohen, The planets
+- Isaac Asimov, The best of Isaac Asimov
+
 ### Read
 
-- [x] Isaac Asimov, Marooned of Vesta
-      </br ><small> Short intriguing story about a crew surviving an asteroid crash into their spaceship, interesting and light read.</small>
+#### Non-fiction
 
-- [x] Isaac Asimov, Nightfall
-      </br ><small> A fantastic novel, with deep meaning, substance and science, summary and my analysis [here](/blog/asimov-nightfall/).</small>
+- Neil deGrasse Tyson, Astrophysics for People in a Hurry. 2020 September (audio)
 
-- [x] Stanislav Lem, Solaris
+#### Science fiction
+
+- Ray Bradbury, <b>The Martian Chronicles</b>. 2020 October (audio)
+  </br ><small>Best stories: The Earth Men (The second Expedition), The Third Expedition, Night Meeting, Usher II, The Martian (a martian trapped in people's mind to becomes someone they have lost)</small>
+- Isaac Asimov, stories. 2020 September - October
+
+  - The Martian Way
+  - C-chute
+  - Nightfall, <small> A fantastic novel, with deep meaning, substance and science, my take on it [here](/blog/asimov-nightfall/).</small>
+  - Marooned of Vesta, <small> Short intriguing story about a crew surviving an asteroid crash into their spaceship, interesting and light read.</small>
+
+- Orson Scott Card, Ender's game. 2020 September (audio)
+- Blake Crouch, Recursion. 2020 September (audio book)
+- Stanislav Lem, Solaris
+- Arkady & Boris Strugatsky, Hard to be a god
