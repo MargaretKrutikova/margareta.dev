@@ -45,6 +45,10 @@ export const SEO = (props: Props) => {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          name: "google-site-verification",
+          content: "VwIi-8suCEx6TvN1s-Nzdr2Ah9Y_r4Ctg_zqbLqC5yk",
+        },
+        {
           content: metaDescription,
           name: `description`,
         },
@@ -86,11 +90,6 @@ export const SEO = (props: Props) => {
             : []
         )
         .concat(meta)}
-    >
-      <meta
-        name="google-site-verification"
-        content="VwIi-8suCEx6TvN1s-Nzdr2Ah9Y_r4Ctg_zqbLqC5yk"
-      />
-    </Helmet>
+    />
   )
 }
