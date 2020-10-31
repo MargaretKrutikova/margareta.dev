@@ -8,34 +8,36 @@ description: what I have read or want to read
 
 ### Want to read
 
-- Isaac Asimov, The last question
-- Stanislav Lem
-  - [ ] Memoirs of a space traveller
-  - [ ] The Futurological congress
-  - [ ] The cyberiad
+- The Illustrated Man by Bradbury, Ray
+- Hyperion (Hyperion Cantos, #1) Simmons, Dan
 
 ### Reading
 
+- A Short History of Nearly Everything by Bill Bryson
+- Flowers for Algernon. Daniel Keyes
 - Jim Al-Khalili, Quantum - A Guide for the Perplexed
-- Brian Cox, Andrew Cohen, The planets
 - Isaac Asimov, The best of Isaac Asimov
 
 ### Read
 
 #### Non-fiction
 
+- Man's Search for Meaning. Viktor E. Frankl. 2020 October (audio)
+- Brian Cox, Andrew Cohen, The planets. 2020 October (audio)
 - Neil deGrasse Tyson, Astrophysics for People in a Hurry. 2020 September (audio)
 
 #### Science fiction
 
+- Huxley, Aldous. Brave New World. 2020 October
 - Ray Bradbury, <b>The Martian Chronicles</b>. 2020 October (audio)
   <small>Best stories: The Earth Men (The second Expedition), The Third Expedition, Night Meeting, Usher II, The Martian (a martian trapped in people's mind to becomes someone they have lost)</small>
-- Isaac Asimov, stories. 2020 September - October
+- Isaac Asimov, stories. 2020 September - November
 
   - The Martian Way
   - C-chute
   - Nightfall, <small> A fantastic novel, with deep meaning, substance and science, my take on it [here](/blog/asimov-nightfall/).</small>
   - Marooned of Vesta, <small> Short intriguing story about a crew surviving an asteroid crash into their spaceship, interesting and light read.</small>
+  - The last question
 
 - Orson Scott Card, Ender's game. 2020 September (audio)
 - Blake Crouch, Recursion. 2020 September (audio book)
