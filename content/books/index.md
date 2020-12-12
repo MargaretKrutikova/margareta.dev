@@ -44,6 +44,7 @@ description: what I have read or want to read
        </li>
       <li>Marooned of Vesta, <small> Short intriguing story about a crew surviving an asteroid crash into their spaceship, interesting and light read.</small></li>
       <li>The last question</li>
+      </ul>
     </details>
 
 - Orson Scott Card, Ender's game. 2020 September (audio)
