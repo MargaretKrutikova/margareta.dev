@@ -8,6 +8,9 @@ description: what I have read or want to read
 
 ### Want to read
 
+- Animal Farm, George Orwell
+- Children of Ruin, Adrian Tchaikovsky
+
 ### Reading
 
 - The Fabric of the Cosmos: Space, Time, and the Texture of Reality, Brian Greene (audio)
@@ -15,13 +18,6 @@ description: what I have read or want to read
 - Isaac Asimov, The best of Isaac Asimov
 
 ### Read
-
-#### Non-fiction
-
-- A Short History of Nearly Everything by Bill Bryson. 2020 November (audio)
-- Man's Search for Meaning. Viktor E. Frankl. 2020 October (audio)
-- Brian Cox, Andrew Cohen, The planets. 2020 October (audio)
-- Neil deGrasse Tyson, Astrophysics for People in a Hurry. 2020 September (audio)
 
 #### Science fiction
 
@@ -54,6 +50,13 @@ description: what I have read or want to read
 - Blake Crouch, Recursion. 2020 September (audio)
 - Stanislav Lem, Solaris. 2020 September (ebook)
 - Arkady & Boris Strugatsky, Hard to be a god. 2020 July (book)
+
+#### Non-fiction
+
+- A Short History of Nearly Everything by Bill Bryson. 2020 November (audio)
+- Man's Search for Meaning. Viktor E. Frankl. 2020 October (audio)
+- Brian Cox, Andrew Cohen, The planets. 2020 October (audio)
+- Neil deGrasse Tyson, Astrophysics for People in a Hurry. 2020 September (audio)
 
 ## DNF
 
