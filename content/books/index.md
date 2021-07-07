@@ -8,19 +8,37 @@ description: what I have read or want to read
 
 ### Want to read
 
-- Animal Farm, George Orwell
-- Children of Ruin, Adrian Tchaikovsky
+- The New Right: A Journey to the Fringe of American Politics, Michael Malice 
+- Dear Reader: The Unauthorized Autobiography of Kim Jong Il, Michael Malice
+- Ordinary Men
+- Reinventing the sacred, Stuart Kauffman
+- On having no head, Douglas Harding
+- The Psychedelic Explorer's guide, Jamed Fadiman
+- The selfish gene
 
 ### Reading
 
-- The Fabric of the Cosmos: Space, Time, and the Texture of Reality, Brian Greene (audio)
-- Hyperion (Hyperion Cantos, #1) Simmons, Dan
-- Isaac Asimov, The best of Isaac Asimov
+- Free Will, Sam Harris. June-July 2021
+
+#### Non-fiction
+
+- Yeonmi Park, In Order to live. July 2021 (ebook)
+- Thinking, Fast and Slow. Daniel Kahneman. January 2021 (audio)
+- Man's Search for Meaning. Viktor E. Frankl. October 2020 (audio)
 
 ### Read
 
 #### Science fiction
 
+- Dune Chronicles, Frank Herbert. May 2021 (audio)
+- The Hitchhiker's Guide to the Galaxy, Douglas Adams. March 2021 (ebook, audio) 
+  - Hitchhiker's Guide to the Galaxy
+  - Life, the Universe and Everything
+  - Mostly harmless
+  - Restaurant at the end of the universe
+  - So Long, and Thanks for All the Fish
+- Animal farm, George Orwell. February 2021 (ebook)
+- Children of Ruin, Adrian Tchaikovsky. December 2021 (audio)
 - Memoirs of a Space Traveler: Further Reminiscences of Ijon Tichy, Stanisław Lem. December 2020 (ebook)
 - Slaughterhouse-Five, Kurt Vonnegut Jr. 2020 December (ebook)
 - Flowers for Algernon, Daniel Keyes. 2020 November (ebook)
@@ -52,10 +70,9 @@ description: what I have read or want to read
 - Stanislav Lem, Solaris. 2020 September (ebook)
 - Arkady & Boris Strugatsky, Hard to be a god. 2020 July (book)
 
-#### Non-fiction
+#### Popular science
 
 - A Short History of Nearly Everything by Bill Bryson. 2020 November (audio)
-- Man's Search for Meaning. Viktor E. Frankl. 2020 October (audio)
 - Brian Cox, Andrew Cohen, The planets. 2020 October (audio)
 - Neil deGrasse Tyson, Astrophysics for People in a Hurry. 2020 September (audio)
 
@@ -66,3 +83,5 @@ description: what I have read or want to read
 - The Martian, by Andy Weir. (audio, ebook) October-November 2020
 - Crime and Punishment, Fyodor Dostoyevsky. (audio)
 - Jim Al-Khalili, Quantum - A Guide for the Perplexed
+- Hyperion (Hyperion Cantos, #1) Simmons, Dan
+- The Fabric of the Cosmos: Space, Time, and the Texture of Reality, Brian Greene (audio)
