@@ -16,6 +16,12 @@ description: what I have read or want to read
 - The Psychedelic Explorer's guide, Jamed Fadiman
 - The selfish gene
 
+### Recommendations from Malice
+
+- The Righteous mind, Jonathan Haidt
+- The Machiavellians, Defenders of freedom. James Burnham (politics)
+- Ayn Rand, The Fountainhead (psychology and ethics)
+
 ### Reading
 
 - Free Will, Sam Harris. June-July 2021
