@@ -6,6 +6,16 @@ category: til
 description: what I learn every day
 ---
 
+## TIL #10
+
+<small> #cmd, #linux </small><small>2021-07-23</small>
+
+Command to search for files and folders in `linux` by name:
+
+```
+sudo find / -name filebeat.yml
+```
+
 ## TIL #9
 
 <small> #git, </small><small>2020-09-25</small>
