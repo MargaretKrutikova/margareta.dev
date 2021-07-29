@@ -67,7 +67,7 @@ cd /home/adminuser/graylog-server
 curl -XDELETE 'http://localhost:9200/graylog_0'
 sudo docker-compose down
 sudo -i
-rm /var/lib/graylog-sidecar/collectors/filebeat/data/registry
+rm /var/lib/graylog-sidecar/collectors/filebeat/data/registry/filebeat/log.json
 rm /var/lib/graylog-sidecar/collectors/filebeat/log/filebeat*
 exit
 
