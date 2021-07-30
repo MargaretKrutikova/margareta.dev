@@ -74,7 +74,7 @@ There are [different async programming patterns](https://docs.microsoft.com/en-u
 ## Task-based asynchronous pattern
 
 - Uses System.Threading.Tasks namespace to have an arbitrary async operations.
-- Single method to represent the beginning and end of the async operation. Such methods return Task or Task<T>
+- Single method to represent the beginning and end of the async operation. Such methods return `Task` or `Task<T>`
 
 ## C# specific behaviors
 
