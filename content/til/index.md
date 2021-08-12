@@ -15,7 +15,12 @@ Get list of file changes between two branches in `git`:
 ```
 git diff --summary origin/master origin/feature-branch
 ```
-Shows renamed, changed, deleted etc one file per line
+Shows rename/move information one file per line
+
+```
+git diff --name-only origin/master origin/feature-branch
+```
+Shows list of files that changed.
 
 ## TIL #10
 
