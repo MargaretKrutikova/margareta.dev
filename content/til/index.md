@@ -6,6 +6,17 @@ category: til
 description: what I learn every day
 ---
 
+## TIL #11
+
+<small> #git, </small><small>2021-08-12</small>
+
+Get list of file changes between two branches in `git`:
+
+```
+git diff --summary origin/master origin/feature-branch
+```
+Shows renamed, changed, deleted etc one file per line
+
 ## TIL #10
 
 <small> #cmd, #linux </small><small>2021-07-23</small>
