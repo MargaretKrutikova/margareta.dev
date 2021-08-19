@@ -6,6 +6,13 @@ category: til
 description: what I learn every day
 ---
 
+## TIL #12
+
+<small> #cmd, #linux </small><small>2021-08-19</small>
+
+Check history of commands in `linux` using `history`.
+Search the history with `Ctrl + R`.
+
 ## TIL #11
 
 <small> #git, </small><small>2021-08-12</small>
