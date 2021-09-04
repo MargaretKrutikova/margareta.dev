@@ -1,0 +1,179 @@
+{
+  "v": 1,
+  "id": "a801bbea-ca47-4fdc-83bc-7ac556824481",
+  "rev": 1,
+  "name": "Bamboo log parser pipeline and sidecar",
+  "summary": "Configuration for pipeline and sidecar to parses bamboo logs in log4j format",
+  "description": "",
+  "vendor": "Rita margaretkru@gmail.com",
+  "url": "",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline",
+        "version": "1"
+      },
+      "id": "ebbaf74b-38be-4b16-a445-1959213421b3",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "bamboo_multiline_pipeline"
+        },
+        "description": {
+          "@type": "string",
+          "@value": ""
+        },
+        "source": {
+          "@type": "string",
+          "@value": "pipeline \"bamboo_multiline_pipeline\"\nstage 0 match either\nrule \"parse log4j\"\nrule \"remove filebeat fields\"\nend"
+        },
+        "connected_streams": [
+          {
+            "@type": "string",
+            "@value": "000000000000000000000001"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.0.9+b962df8"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "sidecar_collector_configuration",
+        "version": "1"
+      },
+      "id": "59873889-2555-4efc-ab33-0856ae23945f",
+      "data": {
+        "collector_id": {
+          "@type": "string",
+          "@value": "2f9c68c1-c9e2-4d52-b680-d5f62a76580f"
+        },
+        "title": {
+          "@type": "string",
+          "@value": "bamboo_parser"
+        },
+        "color": {
+          "@type": "string",
+          "@value": "#FFFFFF"
+        },
+        "template": {
+          "@type": "string",
+          "@value": "# Needed for Graylog\nfields_under_root: true\nfields.collector_node_id: ${sidecar.nodeName}\nfields.gl2_source_collector: ${sidecar.nodeId}\n\nfilebeat.inputs:\n- input_type: log\n  enabled: true\n  paths:\n    - /home/adminuser/bamboo/*.txt\n  type: log\n  multiline.type: pattern\n  multiline.pattern: '^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}'\n  multiline.negate: true\n  multiline.match: after\n  processors:\n    - add_fields:\n        fields:\n            document_type: \"log4j\"\noutput.logstash:\n   hosts: [\"51.13.101.76:5044\"]\npath:\n  data: /var/lib/graylog-sidecar/collectors/filebeat/data\n  logs: /var/lib/graylog-sidecar/collectors/filebeat/log"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.0.9+b962df8"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "603ee42a-2156-4907-880e-b8b8e04c00f8",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "parse log4j"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Extract log4j fields"
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"parse log4j\"\nwhen\n  has_field(\"filebeat_fields_document_type\") AND to_string($message.filebeat_fields_document_type) == \"log4j\"\nthen\n  let message_field = to_string($message.message);\n  let parsed_fields = \n    grok(\"%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} \\\\[%{DATA:thread}\\\\] \\\\[%{DATA:class}\\\\]%{GREEDYDATA:message}(?s)%{GREEDYDATA:exception}\", message_field);\n\n  let date = parse_date(to_string(parsed_fields.timestamp), \"YYYY-MM-dd HH:mm:ss,SSS\");\n  \n  set_field(\"timestamp\", date);\n  set_field(\"thread\", parsed_fields.thread);\n  set_field(\"level\", parsed_fields.level);\n  set_field(\"class\", parsed_fields.class);\n  set_field(\"exception\", parsed_fields.exception);\n  set_field(\"message\", parsed_fields.message);\n  \nend\n"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.0.9+b962df8"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "b2bf83e4-5f81-416b-b50a-3fe52bea6680",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "remove filebeat fields"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Remove filebeat default fields"
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"remove filebeat fields\"\nwhen\n    has_field(\"beats_type\")\nthen\n    remove_field(\"beats_type\");\n    remove_field(\"filebeat_@metadata_beat\");\n    remove_field(\"filebeat_@metadata_type\");\n    remove_field(\"filebeat_@metadata_version\");\n    remove_field(\"filebeat_@timestamp\");\n    remove_field(\"filebeat_beat_hostname\");\n    remove_field(\"filebeat_beat_name\");\n    remove_field(\"filebeat_host_architecture\");\n    remove_field(\"filebeat_host_containerized\");\n    remove_field(\"filebeat_host_id\");\n    remove_field(\"filebeat_host_name\");\n    remove_field(\"filebeat_host_os_codename\");\n    remove_field(\"filebeat_host_os_family\");\n    remove_field(\"filebeat_host_os_name\");\n    remove_field(\"filebeat_host_os_platform\");\n    remove_field(\"filebeat_host_os_version\");\n    remove_field(\"filebeat_input_type\");\n    remove_field(\"filebeat_meta_cloud_instance_id\");\n    remove_field(\"filebeat_log_file_path\");\n    remove_field(\"filebeat_meta_cloud_instance_name\");\n    remove_field(\"filebeat_meta_cloud_machine_type\");\n    remove_field(\"filebeat_meta_cloud_provider\");\n    remove_field(\"filebeat_meta_cloud_region\");\n    remove_field(\"filebeat_prospector_type\");\n    remove_field(\"filebeat_beat_version\");\n    remove_field(\"filebeat_offset\");\n    remove_field(\"filebeat_agent_ephemeral_id\");\n    remove_field(\"filebeat_agent_hostname\");\n    remove_field(\"filebeat_agent_id\");\n    remove_field(\"filebeat_agent_name\");\n    remove_field(\"filebeat_agent_type\");\n    remove_field(\"filebeat_agent_version\");\n    remove_field(\"filebeat_collector_node_id\");\n    remove_field(\"filebeat_ecs_version\");\n    remove_field(\"filebeat_log_offset\");\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.0.9+b962df8"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "sidecar_collector",
+        "version": "1"
+      },
+      "id": "2f9c68c1-c9e2-4d52-b680-d5f62a76580f",
+      "data": {
+        "name": {
+          "@type": "string",
+          "@value": "filebeat"
+        },
+        "service_type": {
+          "@type": "string",
+          "@value": "exec"
+        },
+        "node_operating_system": {
+          "@type": "string",
+          "@value": "linux"
+        },
+        "executable_path": {
+          "@type": "string",
+          "@value": "/usr/share/filebeat/bin/filebeat"
+        },
+        "execute_parameters": {
+          "@type": "string",
+          "@value": "-c  %s"
+        },
+        "validation_parameters": {
+          "@type": "string",
+          "@value": "test config -c %s"
+        },
+        "default_template": {
+          "@type": "string",
+          "@value": "# Needed for Graylog\nfields_under_root: true\nfields.collector_node_id: ${sidecar.nodeName}\nfields.gl2_source_collector: ${sidecar.nodeId}\n\nfilebeat.inputs:\n- input_type: log\n  paths:\n    - /var/log/*.log\n  type: log\noutput.logstash:\n   hosts: [\"192.168.1.1:5044\"]\npath:\n  data: /var/lib/graylog-sidecar/collectors/filebeat/data\n  logs: /var/lib/graylog-sidecar/collectors/filebeat/log"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.0.9+b962df8"
+        }
+      ]
+    }
+  ]
+}
