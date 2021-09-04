@@ -77,5 +77,5 @@ Init with backend: `terraform init -backend-config=backend-config.txt`
 
 TODO:
 
-[] Try avoid creating a new service principal just for terraform.
+[] Per branch development
 [] Automate creating storage account with terraform
