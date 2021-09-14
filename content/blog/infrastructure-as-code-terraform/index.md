@@ -9,6 +9,8 @@ category: blog-post
 
 ![IaC bandwagon](./images/iac-bandwagon.jpeg)
 
+Also published at [dev.to](https://dev.to/margaretkrutikova/why-iac-and-high-level-overview-of-terraform-4die).
+
 Infrastructure as code, or **IaC**, is becoming more and more mature nowadays and there are many tools that allow describing infrastructure in code, such [`terraform`](https://www.terraform.io/), [`pulumi`](https://www.pulumi.com/), [`farmer`](https://compositionalit.github.io/farmer/) (`Azure` only) etc. Let's see why we should jump on IaC bandwagon and understand its main ideas and benefits, and also learn how terraform implements them.
 
 ## What is infrastructure?
