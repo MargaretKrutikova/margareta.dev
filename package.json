@@ -82,6 +82,7 @@
     "url": "git+https://github.com/gperl27/Gatsby-Starter-Blog-Typescript.git"
   },
   "scripts": {
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "develop": "gatsby develop -p 8002",
     "format": "prettier --write src/**/*.{js,jsx}",
