@@ -8,9 +8,6 @@ description: what I have read or want to read
 
 ### Want to read
 
-- The New Right: A Journey to the Fringe of American Politics, Michael Malice 
-- Dear Reader: The Unauthorized Autobiography of Kim Jong Il, Michael Malice
-- Ordinary Men
 - Reinventing the sacred, Stuart Kauffman
 - On having no head, Douglas Harding
 - The Psychedelic Explorer's guide, Jamed Fadiman
@@ -26,18 +23,18 @@ description: what I have read or want to read
 
 - Free Will, Sam Harris. June-July 2021
 
+### Read
+
 #### Non-fiction
 
 - Yeonmi Park, In Order to live. July 2021 (ebook)
 - Thinking, Fast and Slow. Daniel Kahneman. January 2021 (audio)
 - Man's Search for Meaning. Viktor E. Frankl. October 2020 (audio)
 
-### Read
-
 #### Science fiction
 
 - Dune Chronicles, Frank Herbert. May 2021 (audio)
-- The Hitchhiker's Guide to the Galaxy, Douglas Adams. March 2021 (ebook, audio) 
+- The Hitchhiker's Guide to the Galaxy, Douglas Adams. March 2021 (ebook, audio)
   - Hitchhiker's Guide to the Galaxy
   - Life, the Universe and Everything
   - Mostly harmless
@@ -91,3 +88,5 @@ description: what I have read or want to read
 - Jim Al-Khalili, Quantum - A Guide for the Perplexed
 - Hyperion (Hyperion Cantos, #1) Simmons, Dan
 - The Fabric of the Cosmos: Space, Time, and the Texture of Reality, Brian Greene (audio)
+- Dear Reader: The Unauthorized Autobiography of Kim Jong Il, Michael Malice
+- Ordinary Men
