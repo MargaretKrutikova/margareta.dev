@@ -1,11 +1,13 @@
 ---
-title: Why infrastructure as code and how terraform implements it
+title: Why infrastructure as code and high-level overview of terraform
 description: Reasons behind using infrastructure as code and how terraform implements it
 published: true
 tags: [terraform, infrastructure]
 date: 2021-09-04T12:16:21.000Z
 category: blog-post
 ---
+
+![IaC bandwagon](./images/iac-bandwagon.jpeg)
 
 Infrastructure as code, or **IaC**, is becoming more and more mature nowadays and there are many tools that allow describing infrastructure in code, such [`terraform`](https://www.terraform.io/), [`pulumi`](https://www.pulumi.com/), [`farmer`](https://compositionalit.github.io/farmer/) (`Azure` only) etc. Let's see why we should jump on IaC bandwagon and understand its main ideas and benefits, and also learn how terraform implements them.
 
