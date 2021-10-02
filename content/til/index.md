@@ -6,6 +6,21 @@ category: til
 description: what I learn every day
 ---
 
+## TIL #13
+
+<small> #git </small><small>2021-10-02</small>
+
+Git alias to rewrite username or email:
+
+```sh
+git config --global alias.change-commits '!'"f() { VAR=\$1; OLD=\$2; NEW=\$3; shift 3; git filter-branch -f --env-filter \"if [[ \\\"\$\`echo \$VAR\`\\\" = '\$OLD' ]]; then export \$VAR='\$NEW'; fi\" \$@; }; f"
+```
+
+Usage:
+```sh
+git change-commits GIT_AUTHOR_EMAIL "wrong@email.com" "right@email.com" HEAD~3..HEAD
+```
+
 ## TIL #12
 
 <small> #cmd, #linux </small><small>2021-08-19</small>
