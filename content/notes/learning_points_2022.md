@@ -10,3 +10,7 @@
 ## Bad stuff
 
 - F# type providers is better to avoid, might be good for prototyping and experimenting, but no more - too much magic, fails often, cache is stale and doesn't work properly on CI.
+
+# Non-tech
+
+- "Feature factory" sucks. A team is told to implement a feature, and they do it ... Nothing can go wrong, right? RIGHT? No. It is always better to talk through what is supposed to be built, maybe you can build an MVP on a smaller scale first to get some feedback from the users before building a full-blown scale project. Maybe this thing shouldn't be built at all because it doesn't belong to the project. Think and talk before doing stuff.
