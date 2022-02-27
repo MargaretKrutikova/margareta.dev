@@ -1,5 +1,5 @@
 ---
-title: Setting up EventStoreDB on aws with CDK in TS
+title: Setting up EventStoreDB on AWS with CDK in TS
 description:
 published: true
 tags: [aws, cdk, event-store, infrastructure]
