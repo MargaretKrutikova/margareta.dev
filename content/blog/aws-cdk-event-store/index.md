@@ -1,7 +1,7 @@
 ---
 title: Setting up EventStoreDB on aws with cdk in TS
 description:
-published: false
+published: true
 tags: [aws, cdk, event-store, infrastructure]
 date: 2022-02-27T14:56:21.000Z
 category: blog-post
@@ -11,11 +11,26 @@ Event store can be deployed as a managed instance via [Event Store Cloud](https:
 
 The `cdk` code is available on [`github`](https://github.com/MargaretKrutikova/event-store-aws-cdk).
 
+Quick links to content:
+
+- [Setup overview](#setup-overview)
+- [CDK best practices](#cdk-best-practices)
+- [CDK Infrastructure](#cdk-infrastructure)
+  - [Stateful resources](#stateful-resources)
+  - [Event store](#event-store)
+  - [Creating stacks and dependencies](#creating-stacks-and-dependencies)
+  - [Enable access to event store](#enable-access-to-event-store)
+- [Scientific diagram of how everything hangs together](#scientific-diagram-of-how-everything-hangs-together)
+- [Access EventStore Admin UI](#access-eventstore-admin-ui)
+- [Bonus: generating certificate](#bonus-generating-certificate)
+- [Next steps](#next-steps)
+- [Acknowledgments](#cknowledgments)
+
 ## Setup overview
 
 Our `cdk` code will:
 
-- create a VPC where the file system will reside,
+- create a [VPC](https://aws.amazon.com/vpc/) (Virtual Private Cloud) where the file system will reside,
 - create a file system for persisting events,
 - spin up a container running `EventStoreDB` on ECS [Fargate](),
 - configure security group access to the event store from another `Fargate` service.
@@ -38,7 +53,11 @@ Following these will greatly help when your app grows - you will need to refacto
   - a stateful stack with the VPC and EFS constructs,
   - a stateless stack with the event store construct.
 
-## Stateful resources
+## CDK Infrastructure
+
+EFS is a stateful resource and it depends on VPC (removing it will nuke the EFS), so it makes sense to group these two resources in one stack. The rest - ECS cluster and event store service - belong to a separate stack that can be destroyed and re-deployed without any data loss.
+
+### Stateful resources
 
 Here is how the [vpc](https://github.com/MargaretKrutikova/event-store-aws-cdk/blob/master/lib/constructs/vpc.ts) and [file system](https://github.com/MargaretKrutikova/event-store-aws-cdk/blob/master/lib/constructs/file-system.ts) look, one thing to note is `enableAutomaticBackups` when creating the file system:
 
@@ -91,7 +110,7 @@ export class StatefulStack extends Stack {
 }
 ```
 
-## Event store
+### Event store
 
 This beast is tricky, here is what we do:
 
@@ -173,7 +192,7 @@ esContainer.addMountPoints({
 
 Last, we create a `Fargate` service on the cluster and with the task definition defined above.
 
-## Creating stacks and dependencies
+### Creating stacks and dependencies
 
 In our `bin/app.ts` we assemble the stacks and constructs taking into account their dependencies. An instance of `StatefulStack` is created first, the event store stack is created on the fly inside the construct and accepts resources from `StatefulStack` as dependencies in `props`:
 
@@ -192,7 +211,7 @@ const eventStoreResources = new EventStoreConstruct(
 )
 ```
 
-## Access to event store from outside
+### Enable access to event store
 
 Assume we have another `Fargate` service and we want to give it access to our event store. We need to add inbound rules in the event store security group to allow access on specific ports from the security group of this new service.
 
