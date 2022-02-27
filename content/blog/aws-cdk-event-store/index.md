@@ -194,7 +194,7 @@ Last, we create a `Fargate` service on the cluster and with the task definition 
 
 ### Creating stacks and dependencies
 
-In our `bin/app.ts` we assemble the stacks and constructs taking into account their dependencies. An instance of `StatefulStack` is created first, the event store stack is created on the fly inside the construct and accepts resources from `StatefulStack` as dependencies in `props`:
+In our [`bin/app.ts`](https://github.com/MargaretKrutikova/event-store-aws-cdk/blob/master/bin/app.ts) we assemble the stacks and constructs taking into account their dependencies. An instance of `StatefulStack` is created first, the event store stack is created on the fly inside the construct and accepts resources from `StatefulStack` as dependencies in `props`:
 
 ```ts
 const app = new cdk.App()
