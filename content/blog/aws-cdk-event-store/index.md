@@ -24,7 +24,7 @@ Quick links to content:
 - [Access EventStore Admin UI](#access-eventstore-admin-ui)
 - [Bonus: generating certificate](#bonus-generating-certificate)
 - [Next steps](#next-steps)
-- [Acknowledgments](#cknowledgments)
+- [Acknowledgments](#acknowledgments)
 
 ## Setup overview
 
