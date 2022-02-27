@@ -1,5 +1,5 @@
 ---
-title: Setting up EventStoreDB on aws with cdk in TS
+title: Setting up EventStoreDB on aws with CDK in TS
 description:
 published: true
 tags: [aws, cdk, event-store, infrastructure]
@@ -7,9 +7,9 @@ date: 2022-02-27T14:56:21.000Z
 category: blog-post
 ---
 
-Event store can be deployed as a managed instance via [Event Store Cloud](https://www.eventstore.com/event-store-cloud) which will take care of availability, clustering and other candies. The only drawback is the high [cost](https://www.eventstore.com/event-store-cloud/pricing) of the hosting resources plus a separate cost (also high IMO 😛) for [support](https://www.eventstore.com/support). Here we won't take any fancy shortcuts with managed clouds and do it on our own in `aws` using `cdk` with `Typescript`. We will have one event store cluster running in ECS `Fargate` service accessing an external file system.
+Event store can be deployed as a managed instance via [Event Store Cloud](https://www.eventstore.com/event-store-cloud) which will take care of availability, clustering and other candies. The only drawback is the high [cost](https://www.eventstore.com/event-store-cloud/pricing) of the hosting resources plus a separate cost (also high IMO 😛) for [support](https://www.eventstore.com/support). Here we won't take any fancy shortcuts with managed clouds and do it on our own in `AWS` using infrastructure as code with [`CDK`](https://aws.amazon.com/cdk/) in `Typescript`. We will have one event store cluster running in ECS `Fargate` service accessing an external file system, or [EFS](https://aws.amazon.com/efs/).
 
-The `cdk` code is available on [`github`](https://github.com/MargaretKrutikova/event-store-aws-cdk).
+The `CDK` code is available on [`github`](https://github.com/MargaretKrutikova/event-store-aws-cdk).
 
 Quick links to content:
 
@@ -28,7 +28,7 @@ Quick links to content:
 
 ## Setup overview
 
-Our `cdk` code will:
+Our `CDK` code will:
 
 - create a [VPC](https://aws.amazon.com/vpc/) (Virtual Private Cloud) where the file system will reside,
 - create a file system for persisting events,
@@ -37,7 +37,7 @@ Our `cdk` code will:
 
 ## CDK best practices
 
-A couple of very important `cdk` [best practices](https://aws.amazon.com/blogs/devops/best-practices-for-developing-cloud-applications-with-aws-cdk/) that we will follow in our setup:
+A couple of very important `CDK` [best practices](https://aws.amazon.com/blogs/devops/best-practices-for-developing-cloud-applications-with-aws-cdk/) that we will follow in our setup:
 
 - organize app in logical units that extend `Construct`,
 - group constructs into deployment units that extend `Stack`,
@@ -47,7 +47,7 @@ Following these will greatly help when your app grows - you will need to refacto
 
 - Constructs:
   - VPC where we will attach the file system and ECS cluster for event store,
-  - file system [EFS](https://aws.amazon.com/efs/),
+  - file system,
   - ECS cluster and `Fargate` service for running event store,
 - Stacks:
   - a stateful stack with the VPC and EFS constructs,
@@ -217,7 +217,7 @@ Assume we have another `Fargate` service and we want to give it access to our ev
 
 Ideally we don't want to configure security group rules inside the event store construct/stack because it will invert the dependency arrow - it is not the event store that depends on that external service, but the external service depends on the event store. In this way the deployment cycle of the event store is not affected by deployments of the dependent stacks.
 
-One solution is to allow other `cdk` constructs to configure access to the event store security group that we can expose from the event store construct. The plan is:
+One solution is to allow other `CDK` constructs to configure access to the event store security group that we can expose from the event store construct. The plan is:
 
 - expose `connections` object from the `Fargate` service on the construct,
 - pass the `connections` as a dependency in `props` in the other service construct,
@@ -299,4 +299,4 @@ Things to do before going live:
 
 ## Acknowledgments
 
-I had the chance to carry out this cool experiment while working at a wonderful place, called [Insurello](https://insurello.se/blogg/#tech) in Stockholm, Sweden, with the help of my brilliant colleagues. They do tons of functional programming with `F#` and `Elm`, event sourcing, AWS with `cdk` and much more (I am not employed there right now and I miss them).
+I had the chance to carry out this cool experiment while working at a wonderful place, called [Insurello](https://insurello.se/blogg/#tech) in Stockholm, Sweden, with the help of my brilliant colleagues. They do tons of functional programming with `F#` and `Elm`, event sourcing, AWS with `CDK` and much more (I am not employed there right now and I miss them).
