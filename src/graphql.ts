@@ -33,6 +33,7 @@ export const markdownRemarkInfo = graphql`
   fragment MarkdownRemarkInfo on MarkdownRemark {
     id
     excerpt(pruneLength: 160)
+    timeToRead
     html
     fields {
       title

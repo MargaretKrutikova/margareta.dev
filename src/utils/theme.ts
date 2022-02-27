@@ -8,4 +8,5 @@ export const colors = {
   darkerBeige: "rgb(221, 213, 209);",
   lightGrey: "#ededed",
   darkGrey: "#929292",
+  darkerGrey: "#656565",
 }
