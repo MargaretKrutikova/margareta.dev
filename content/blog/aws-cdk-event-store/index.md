@@ -1,6 +1,6 @@
 ---
-title: Setting up EventStoreDB on AWS with CDK in TS
-description:
+title: Set up Event Store on AWS with CDK in TS
+description: Find out how to setup Event Store for your cool event sourcing project on AWS with infra as code using CDK in Typescript
 published: true
 tags: [aws, cdk, event-store, infrastructure]
 date: 2022-02-27T14:56:21.000Z
