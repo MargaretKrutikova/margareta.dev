@@ -8,10 +8,11 @@ description: what I have read or want to read
 
 ### Want to read
 
+- Social Origins of Dictatorship and Democracy: Lord and Peasant in the Making of the Modern World
+- THE CHANGING WORLD ORDER
 - Reinventing the sacred, Stuart Kauffman
 - On having no head, Douglas Harding
 - The Psychedelic Explorer's guide, Jamed Fadiman
-- The selfish gene
 
 ### Recommendations from Malice
 
