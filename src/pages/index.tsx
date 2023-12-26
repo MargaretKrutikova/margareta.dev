@@ -84,6 +84,16 @@ const StartPage = (props: Props) => {
           /dev.to
         </StyledLink>
       </Wrapper>
+      <p style={{ marginTop: 150 }}>
+      - It is impossible to please you, you spent most of your life in a rainy and miserable place and now you have sun, a lot of it! And you are grumpy..
+      - Nonsense! I want sun! But not all of it all the time … I also want rain, sometimes. 
+        I want my life bright and perfect, but sometimes I want it dark and empty.
+        I want love, hope and warmth but sometimes I have an appetite for desperation, misery and pain. 
+        I want to be right, most of the time, and I want to be wrong and make a lot of mistakes the rest of the time. 
+        I want to make love at daytime, and I want to cry at night.
+        I want to stumble and fall on the ground while the sun is high up in the sky, and rise up through pain and blood and run forward under a heavy rain. 
+        I want to make you laugh, but I want to make you cry too, because you need to learn, you need sun, and you need rain.
+      </p>
     </Layout>
   )
 }
